@@ -14,7 +14,7 @@
 
     </section>
 
-    <!--<PopularProductsComponent/>-->
+
     <PopularProductsComponent :products="sortedStockedProducts"/>
 
     <FooterComponent/>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-//script was eerst leeg gwn en de components in src was er ook niet
+
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import NavComponent from '@/components/NavComponent.vue';
@@ -44,12 +44,6 @@ export default{
       return this.data.producten.slice().sort((a, b) => b.stock - a.stock);
     },
   },
-
-  //computed: {
-    //producten(){
-      //return this.data.producten.slice().sort((a,b) => b.stock - a.stock);
-    //}
-  //},
 
   components: {
     NavComponent,

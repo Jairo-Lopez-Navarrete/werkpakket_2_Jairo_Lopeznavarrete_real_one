@@ -15,13 +15,7 @@
         <img src="@/assets/guitar.png" alt="guitar1" class="card-image">
       </div>
       <div class="text-number">
-        <p><b>De Ibanez 3500X(small)</b> is een zwarte elektrische gitaar met een "Flat Black" finish. Deze gitaar
-          behoort tot de
-          Ibanez GIO-serie, die bekend staat om zijn betaalbare prijs en goede speelbaarheid. De GRG121DX-BKF
-          heeft
-          een
-          dubbele cutaway bodyvorm, wat zorgt voor gemakkelijke toegang tot de hogere frets. De gitaar heeft een
-          agressieve uitstraling en is geschikt voor verschillende muziekstijlen, vooral rock en metal.</p>
+        <p><b>{{producten.titel}}</b>{{producten.omschrijving}}</p>
         <p class="price">499.99 euro</p>
         <form>
           <input id="hoeveelheid" type="number">
