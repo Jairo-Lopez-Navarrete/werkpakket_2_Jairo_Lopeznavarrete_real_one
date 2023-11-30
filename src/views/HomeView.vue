@@ -40,7 +40,7 @@ export default{
    },
 
   computed: {
-    sortedProducts() {
+    sortedStockedProducts() {
       return this.data.producten.slice().sort((a, b) => b.stock - a.stock);
     },
   },
@@ -63,3 +63,4 @@ export default{
 <style scoped>
 
 </style>
+
