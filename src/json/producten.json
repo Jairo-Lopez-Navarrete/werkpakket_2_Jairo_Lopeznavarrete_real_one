@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "titel": "Ibanez 3500X",
+    "omschrijving": "Dit gitaar is een zekere aanrader voor gevorderde gitaar spelers, Het heeft een hele dunne en soepele nek waarmee je snel en makkelijk kan shredden.",
+    "afbeelding": "guitar.png",
+    "price": 500,
+    "btw": "25%",
+    "stock": 12
+  },
+  {
+    "id": 2,
+    "titel": "Pacifica Eg350",
+    "omschrijving": "De Pacifica Eg350 is altijd een aanrader voor beginners, dit gitaar is gemaakt met het eikenhout, waardoor de gitaar zo licht als een veertje is. Dit gitaar heeft 26 frets wat meer is dan de gemiddelde.",
+    "afbeelding": "guitar-2.png",
+    "price": 300,
+    "btw": "40%",
+    "stock": 20
+  },
+  {
+    "id": 3,
+    "titel": "Squier Sunburned E34X",
+    "omschrijving": "De Squier Sunburned E34X is heeft een lichte overgang van oranje naar zwart met een dikkere nek van 29 frets",
+    "afbeelding": "guitar-3.png",
+    "price": 150,
+    "btw": "40%",
+    "stock": 11
+  },
+  {
+    "id": 4,
+    "titel": "Ibanez DireFire",
+    "omschrijving": "De Ibanez DireFire is een gitaar voor echte durvers die graag hun grootste skills testen",
+    "afbeelding": "guitar_more_1.png",
+    "price": 3500,
+    "btw": "15%",
+    "stock": 0
+  },
+  {
+    "id": 5,
+    "titel": "Ibanez XRI 1 (gold)",
+    "omschrijving": "De Ibanez XRI 1 (gold) heeft niet alleen de juiste sounds maar ook de looks van een echte rockgitaar. dit gitaar is speciaal gemaakt voor als je in verschillende tunes wilt kunnen spelen zoals drop #C, drop #D, drop #A, de snaren zijn gemaakt van zilver in plaats van metaal en ze zijn dikker aangelegt als de meeste snaren waardoor je ze makkelijk anders kan afstemmen zonder dat ze kapot springen!",
+    "afbeelding": "guitar-4.png",
+    "price": 4500,
+    "btw": "10%",
+    "stock": 2
+  },
+  {
+    "id": 6,
+    "titel": "ESP T-bone EquializerR6",
+    "omschrijving": "De ESP T-bone EqualizerR6 word voornamelijk gebruikt om blues en country te spelen",
+    "afbeelding": "@/assets/guitar-T.png",
+    "price": 2500,
+    "btw": "25%",
+    "stock": 15
+  },
+  {
+    "id": 7,
+    "titel": "Gibson Melbourne2",
+    "omschrijving": "De Gibson Melbourne2 is een elite gitaar dat gekocht word door de beste gitaarspelers over heel de wereld",
+    "afbeelding": "@/assets/guitar-T-2.png",
+    "price": 10000,
+    "btw": "5%",
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "titel": "Squier Stratocaster Metalblack",
+    "omschrijving": "De Squier Stratocaster Metalblack is volledig zwart met een metallic stijl",
+    "afbeelding": "@/assets/guitar-T-3.png",
+    "price": 2280,
+    "btw": "40%",
+    "stock": 22
+  },
+  {
+    "id": 9,
+    "titel": "Squier Stratocaster GoldSun",
+    "omschrijving": "De Squier Stratocaster GoldSun is echt een klassieker, koop deze nu",
+    "afbeelding": "@/assets/guitar-T-3.png",
+    "price": 2450,
+    "btw": "33%",
+    "stock": 18
+  }
+]
