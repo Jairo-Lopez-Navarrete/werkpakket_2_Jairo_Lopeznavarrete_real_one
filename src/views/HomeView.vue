@@ -14,7 +14,8 @@
 
     </section>
 
-    <PopularProductsComponent/>
+    <!--<PopularProductsComponent/>-->
+    <PopularProductsComponent :products="sortedStockedProducts"/>
 
     <FooterComponent/>
 
@@ -35,8 +36,14 @@ export default{
    data(){
      return {
      data: producten
-    }
+    };
    },
+
+  computed: {
+    sortedProducts() {
+      return this.data.producten.slice().sort((a, b) => b.stock - a.stock);
+    },
+  },
 
   //computed: {
     //producten(){

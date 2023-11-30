@@ -2,6 +2,7 @@
 
   <article>
 
+
     <section class="gallery">
       <div class="card-wrapper">
         <div class="card" v-for="product in sortedStockedProducts" :key="product.id">
@@ -9,14 +10,15 @@
             <h1 class="card-overlay-heading">{{ product.titel }}</h1>
             <p class="card-overlay-paragraph">{{ product.price }}</p>
             <button class="card-overlay-button">
-              <router-link :to="'/detail/' + product.id">Koop nu</router-link>
+              <router-link to="/detail">Koop nu</router-link>
             </button>
             <router-view></router-view>
           </div>
-          <img :src="require(`@/assets/${product.afbeelding}`)" :alt="product.titel" class="card-image">
+          <img :src="require('@/assets/' + product.afbeelding)" :alt="product.titel" class="card-image">
         </div>
       </div>
     </section>
+  </article>
 
     <!--<section class="gallery">
       <div class="card-wrapper">
@@ -83,9 +85,6 @@
         </div>
       </div>
     </section>-->
-
-
-  </article>
 
 
   <!--<article>
@@ -160,13 +159,24 @@
 <script>
 
 
-import producten from '@/json/producten.json';
+//import producten from '@/json/producten.json';
 
 export default {
   name: "PopularProductsComponent",
 
 
+  props: {
+    products: Array,
+  },
   computed: {
+    sortedStockedProducts() {
+      return this.products.slice(0, 4);
+    },
+  },
+};
+
+
+  /*computed: {
     sortedStockedProducts() {
       if (!producten || !producten.length) {
         return [];
@@ -176,7 +186,7 @@ export default {
       return sorted.slice(0, Math.min(sorted.length, 4));
     }
   },
-}
+}*/
 
   /*computed: {
     sortedStockedProducts() {
