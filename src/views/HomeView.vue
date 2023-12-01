@@ -15,7 +15,7 @@
     </section>
 
 
-    <PopularProductsComponent :products="sortedStockedProducts"/>
+    <PopularProductsComponent/> <!--:products="sortedStockedProducts"-->
 
     <FooterComponent/>
 
@@ -33,17 +33,18 @@ import producten from '@/json/producten.json';
 export default{
   name: "HomeView",
 
+
    data(){
      return {
      data: producten
     };
    },
 
-  computed: {
+  /*computed: {
     sortedStockedProducts() {
-      return this.data.producten.slice().sort((a, b) => b.stock - a.stock);
+      return this.data.slice().sort;
     },
-  },
+  },*/
 
   components: {
     NavComponent,
