@@ -7,8 +7,8 @@
     <section class="reclame">
       <div class="layout">
         <div class="background-div">
-          <h2>Bestseller!</h2>
-          <h2>Ibanez 3500X</h2>
+          <h2>{{reclame}}</h2>
+          <h2>{{reclameGitaar}}</h2>
         </div>
       </div>
 
@@ -43,11 +43,14 @@ export default{
     };
    },
 
-  /*computed: {
-    sortedStockedProducts() {
-      return this.data.slice().sort;
+  computed: {
+    reclame(){
+      return "Bestseller!"
     },
-  },*/
+    reclameGitaar(){
+      return "Ibanez 3500X"
+    }
+  },
 
   components: {
     NavComponent,

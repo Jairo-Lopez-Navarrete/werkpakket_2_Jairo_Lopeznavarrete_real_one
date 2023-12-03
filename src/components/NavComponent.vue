@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar">
-    <router-link to="/">Strings Of Fire</router-link>
+    <router-link to="/">{{merkNaam}}</router-link>
     <ul class="list">
       <!--<li v-for="navItem in navItems"
           class="nav-list-item">
         <router-link :to="navItem.path" class="nav-list-link">{{ navItem.name }}</router-link>
       </li>-->
       <li class="list-item"></li>
-        <router-link to="/overzicht" class="list-link"><i class="user logo fa-solid fa-guitar"></i>Producten</router-link>
+        <router-link to="/overzicht" class="list-link"><i class="user logo fa-solid fa-guitar"></i>{{productNaam}}</router-link>
       <li class="list-item">
         <router-link to="/login" class="list-link"><i class="user logo fa-solid fa-user"></i></router-link>
       </li>
@@ -26,7 +26,16 @@
 
 <script>
 export default {
-  name: "NavComponent"
+  name: "NavComponent",
+
+  computed: {
+    merkNaam(){
+      return "Strings Of Fire"
+    },
+    productNaam(){
+      return "Producten"
+    }
+  }
 }
 </script>
 
