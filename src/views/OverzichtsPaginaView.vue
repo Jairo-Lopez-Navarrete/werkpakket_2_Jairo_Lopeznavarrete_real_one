@@ -136,6 +136,7 @@
 import FooterComponent from "@/components/FooterComponent.vue";
 import NavComponent from "@/components/NavComponent.vue";
 import producten from "@/json/producten.json";
+//import ProductCardComponent from '@/components/ProductCardComponent'
 export default {
   name: "OverzichtsPaginaView",
 
@@ -146,7 +147,7 @@ export default {
   },
 
   components: {
-
+    //ProductCardComponent,
     NavComponent,
     FooterComponent
   }
