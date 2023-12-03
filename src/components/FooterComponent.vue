@@ -1,29 +1,29 @@
 <template>
   <footer>
     <div class="div1">
-      <a href="#"><i class="fa-brands fa-facebook"></i>Strings Of Fire</a>
-      <a href="#"><i class="fa-brands fa-instagram"></i>Strings Of Fire</a>
-      <a href="#"><i class="fa-solid fa-square-envelope"></i>StringsOfFire@hotmail.com</a>
+      <a href="#"><i class="fa-brands fa-facebook"></i>{{merkNaam}}</a>
+      <a href="#"><i class="fa-brands fa-instagram"></i>{{merkNaam}}</a>
+      <a href="#"><i class="fa-solid fa-square-envelope"></i>{{merkNaamMail}}</a>
     </div>
     <div class="div2">
-      <p>Contactgegevens:</p>
+      <p>{{ contactGegevens }}</p>
       <ul>
-        <li>Telefoonnummer: 0488571245</li>
-        <li>Adress: Dennenstraat</li>
-        <li>Nummer: 46</li>
-        <li>Postcode: 2050</li>
+        <li>{{ telNummer }}</li>
+        <li>{{ adress }}</li>
+        <li>{{ huisNr }}</li>
+        <li>{{ postCode }}</li>
       </ul>
     </div>
     <div class="div3">
-      <p class="openingsuren">Openingsuren:</p>
+      <p class="openingsuren">{{ openingsUur }}</p>
       <ul>
-        <li>Maandag: 08:00-15:00</li>
-        <li>Dinsdag: 08:00-15:00</li>
-        <li>Woensdag: 08:00-15:00</li>
-        <li>Donderdag: 08:00-15:00</li>
-        <li>Vrijdag: 08:00-15:00</li>
-        <li>Zaterdag: 10:00-17:00</li>
-        <li>Zondag: Gesloten</li>
+        <li>{{ weekdagen[0] }}</li>
+        <li>{{ weekdagen[1] }}</li>
+        <li>{{ weekdagen[2] }}</li>
+        <li>{{ weekdagen[3] }}</li>
+        <li>{{ weekdagen[4] }}</li>
+        <li>{{ weekdagen[5] }}</li>
+        <li>{{ weekdagen[6] }}</li>
       </ul>
     </div>
   </footer>
@@ -31,7 +31,46 @@
 
 <script>
 export default {
-  name: "FooterComponent"
+  name: "FooterComponent",
+
+  data() {
+    return {
+      weekdagen: ['Zondag: Gesloten', 'Maandag: 10:30u tot 15:30u', 'Dinsdag: 10:30u tot 15:30u', 'Woensdag: 10:30u tot 15:30u', 'Donderdag: 10:30u tot 15:30u', 'Vrijdag: 10:30u tot 15:30u', 'Zaterdag: 8:30u tot 16:30u'],
+      /*openingsUren: {
+        'Zondag': 'Gesloten',
+        'Maandag': '10:30 tot 15:30',
+        'Dinsdag': '10:30 tot 15:30',
+        'Woensdag': '10:30 tot 15:30',
+        'Donderdag': '10:30 tot 15:30',
+        'Vrijdag': '10:30 tot 15:30',
+        'Zaterdag': '8:30 tot 16:30',
+      }*/
+    }
+  },
+
+  computed: {
+    merkNaam() {
+      return "Strings Of Fire"
+    },
+    merkNaamMail(){
+      return "StringsOfFire@hotmail.com"
+    },
+    contactGegevens(){
+      return "Contact gegevens:"
+    },
+    telNummer(){
+      return "Telefoonnummer: 0488571245"
+    },
+    adress(){
+      return "Adress: Dennenstraat"
+    },
+    huisNr(){
+      return "Nummer: 46"
+    },
+    postCode(){
+      return "Postcode: 2050"
+    },
+  }
 }
 </script>
 
