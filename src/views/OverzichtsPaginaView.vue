@@ -3,17 +3,17 @@
   <NavComponent/>
 
   <header class="overzichts_titel">
-    <h1>Elektrische gitaren</h1>
+    <h1>{{titel}}</h1>
   </header>
 
   <section>
     <div class="filter">
       <form class="filter-form">
-        <label for="filter-item">St-model</label>
+        <label for="filter-item">{{ filterStModel }}</label>
         <input id="filter-item" type="checkbox">
       </form>
       <form>
-        <label for="filter-item-2">T-model</label>
+        <label for="filter-item-2">{{ filterTModel }}</label>
         <input id="filter-item-2" type="checkbox">
       </form>
     </div>
@@ -143,6 +143,18 @@ export default {
   data(){
     return {
       data: producten
+    }
+  },
+
+  computed: {
+    titel(){
+      return "Elektrische gitaren"
+    },
+    filterStModel(){
+      return "ST-Model"
+    },
+    filterTModel(){
+      return "T-Model"
     }
   },
 

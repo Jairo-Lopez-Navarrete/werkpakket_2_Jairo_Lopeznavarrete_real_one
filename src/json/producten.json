@@ -75,9 +75,18 @@
     "id": 9,
     "titel": "Squier Stratocaster GoldSun",
     "omschrijving": "De Squier Stratocaster GoldSun is echt een klassieker, koop deze nu",
-    "afbeelding": "@/assets/guitar-T-3.png",
+    "afbeelding": "@/assets/guitar-T-4.png",
     "price": 2450,
     "btw": "33%",
     "stock": 18
+  },
+  {
+    "id": 10,
+    "titel": "Ibanez Flying mini 4xer",
+    "omschrijving": "Ibanez flying mini 4xer is een gitaar van een kleinere formaat speciaal ontworpen om makkelijk te transporteren zonder veel plaats in te nemen",
+    "afbeelding": "@/assets/last_guitar.png",
+    "price": 994,
+    "btw": "23%",
+    "stock": 4
   }
 ]
