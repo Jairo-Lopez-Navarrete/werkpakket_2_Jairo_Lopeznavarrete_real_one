@@ -20,7 +20,7 @@
   </section>
 
   <div class="pagination">
-    <a href="#" class="page-link active">1</a>
+    <a href="#" class="page-link active">{{paginatie[0]}}</a>
     <a href="#" class="page-link">2</a>
     <a href="#" class="page-link">3</a>
     <a href="#" class="page-link">4</a>
@@ -142,7 +142,8 @@ export default {
 
   data(){
     return {
-      data: producten
+      data: producten,
+      paginatie: [1,2,3,4,5,]
     }
   },
 
