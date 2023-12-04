@@ -5,7 +5,7 @@
     <router-view/>
   </div>
   <div class="background-info">
-    <h1>Log in</h1>
+    <h1>{{ logIn }}</h1>
     <div class="form-layout">
       <form>
         <label for="e-mail">
@@ -17,9 +17,9 @@
       </form>
     </div>
     <ul class="list">
-      <li class="login list-item"><a class="registreer list-item-link" href="#">Registreer</a></li>
-      <li class="list-item"><a class="login list-item-link" href="#">Log in</a></li>
-      <li class="list-item"><a class="wachtwoord list-item-link" href="#">Wachtwoord vergeten?</a></li>
+      <li class="login list-item"><a class="registreer list-item-link" href="#">{{ registreer }}</a></li>
+      <li class="list-item"><a class="login list-item-link" href="#">{{ logIn }}</a></li>
+      <li class="list-item"><a class="wachtwoord list-item-link" href="#">{{ forgotPass }}</a></li>
     </ul>
   </div>
   </div>
@@ -27,7 +27,19 @@
 
 <script>
 export default {
-  name: "LoginView"
+  name: "LoginView",
+
+  computed: {
+    logIn(){
+      return "Log in"
+    },
+    registreer(){
+      return "Registreer"
+    },
+    forgotPass(){
+      return "Wachtwoord vergeten?"
+    }
+  }
 }
 </script>
 

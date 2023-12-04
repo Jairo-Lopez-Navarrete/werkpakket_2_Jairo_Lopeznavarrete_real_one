@@ -10,11 +10,11 @@
     <div class="filter">
       <form class="filter-form">
         <label for="filter-item">{{ filterStModel }}</label>
-        <input id="filter-item" type="checkbox">
+        <input id="filter-item" type="checkbox" v-model="filterST">
       </form>
       <form>
         <label for="filter-item-2">{{ filterTModel }}</label>
-        <input id="filter-item-2" type="checkbox">
+        <input id="filter-item-2" type="checkbox" v-model="filterT">
       </form>
     </div>
   </section>
@@ -47,11 +47,26 @@ export default {
   data(){
     return {
       data: producten,
-      paginatie: [1,2,3,4,5,]
+      paginatie: [1,2,3,4,5,],
+      filterST: false,
+      filterT: false
     }
   },
 
   computed: {
+    filteredData(){
+      let filtered = this.data;
+
+      if (this.filterST) {
+        filtered = filtered.filter(item => item.model === 'ST-Model');
+      }
+
+      if (this.filterT) {
+        filtered = filtered.filter(item => item.model === 'T-Model');
+      }
+
+      return filtered;
+    },
     titel(){
       return "Elektrische gitaren"
     },
