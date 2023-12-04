@@ -19,7 +19,7 @@
       <PopularProductsComponent :selectedId="2"/>
       <PopularProductsComponent :selectedId="3"/>
       <PopularProductsComponent :selectedId="4"/>
-    </article>   <!--:products="sortedStockedProducts"-->
+    </article> <!--:products="sortedStockedProducts"-->
 
     <FooterComponent/>
 
