@@ -57,6 +57,11 @@ export default {
     filteredData(){
       let filtered = this.data;
 
+      if (this.filterST && this.filterT) {
+        // Toon alle producten als beide filters zijn geselecteerd
+        return this.data;
+      }
+
       if (this.filterST) {
         filtered = filtered.filter(item => item.type === 'ST-Model');
       }
