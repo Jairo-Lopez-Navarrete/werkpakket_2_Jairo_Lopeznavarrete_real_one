@@ -48,7 +48,7 @@
     "id": 6,
     "titel": "ESP T-bone EquializerR6",
     "omschrijving": "De ESP T-bone EqualizerR6 word voornamelijk gebruikt om blues en country te spelen",
-    "afbeelding": "@/assets/guitar-T.png",
+    "afbeelding": "guitar-T.png",
     "price": 2500,
     "btw": "25%",
     "stock": 15
@@ -57,7 +57,7 @@
     "id": 7,
     "titel": "Gibson Melbourne2",
     "omschrijving": "De Gibson Melbourne2 is een elite gitaar dat gekocht word door de beste gitaarspelers over heel de wereld",
-    "afbeelding": "@/assets/guitar-T-2.png",
+    "afbeelding": "guitar-T-2.png",
     "price": 10000,
     "btw": "5%",
     "stock": 10
@@ -66,7 +66,7 @@
     "id": 8,
     "titel": "Squier Stratocaster Metalblack",
     "omschrijving": "De Squier Stratocaster Metalblack is volledig zwart met een metallic stijl",
-    "afbeelding": "@/assets/guitar-T-3.png",
+    "afbeelding": "guitar-T-3.png",
     "price": 2280,
     "btw": "40%",
     "stock": 22
@@ -75,7 +75,7 @@
     "id": 9,
     "titel": "Squier Stratocaster GoldSun",
     "omschrijving": "De Squier Stratocaster GoldSun is echt een klassieker, koop deze nu",
-    "afbeelding": "@/assets/guitar-T-4.png",
+    "afbeelding": "guitar-T-4.png",
     "price": 2450,
     "btw": "33%",
     "stock": 18
@@ -84,7 +84,7 @@
     "id": 10,
     "titel": "Ibanez Flying mini 4xer",
     "omschrijving": "Ibanez flying mini 4xer is een gitaar van een kleinere formaat speciaal ontworpen om makkelijk te transporteren zonder veel plaats in te nemen",
-    "afbeelding": "@/assets/last_guitar.png",
+    "afbeelding": "last_guitar.png",
     "price": 994,
     "btw": "23%",
     "stock": 4

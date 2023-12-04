@@ -21,112 +21,15 @@
 
   <div class="pagination">
     <a href="#" class="page-link active">{{paginatie[0]}}</a>
-    <a href="#" class="page-link">2</a>
-    <a href="#" class="page-link">3</a>
-    <a href="#" class="page-link">4</a>
-    <a href="#" class="page-link">5</a>
+    <a href="#" class="page-link">{{paginatie[1]}}</a>
+    <a href="#" class="page-link">{{paginatie[2]}}</a>
+    <a href="#" class="page-link">{{paginatie[3]}}</a>
+    <a href="#" class="page-link">{{paginatie[4]}}</a>
   </div>
 
-  <!--<article>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Ibanez 3500X (small)</h1>
-            <p class="card-overlay-paragraph">Prijs: €500</p>
-            <router-link to="/detail" class="list-link">
-              <button class="card-overlay-button">Koop nu</button>
-            </router-link>
-          </div>
-          <img src="@/assets/guitar.png" alt="guitar1" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Pacifica Eg350</h1>
-            <p class="card-overlay-paragraph">Prijs: €300</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-2.png" alt="guitar2" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Squier stratocaster</h1>
-            <p class="card-overlay-paragraph">Prijs: €450</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-3.png" alt="guitar3" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Ibanez XRI 1 (Gold)</h1>
-            <p class="card-overlay-paragraph">Prijs: €4500</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-4.png" alt="guitar5" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">ESP 3AgL3</h1>
-            <p class="card-overlay-paragraph">Prijs: €1100</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-T.png" alt="guitar6" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Gibson E-455</h1>
-            <p class="card-overlay-paragraph">Prijs: €11 000</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-T-2.png" alt="guitar7" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Fender stratocaster Er-5</h1>
-            <p class="card-overlay-paragraph">Prijs: €20 000</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-T-3.png" alt="guitar8" class="card-image">
-        </div>
-      </div>
-    </section>
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="card-overlay">
-            <h1 class="card-overlay-heading">Fender Stratocaster Er-10</h1>
-            <p class="card-overlay-paragraph">Prijs: €20 000</p>
-            <button class="card-overlay-button">Koop nu</button>
-          </div>
-          <img src="@/assets/guitar-T-4.png" alt="guitar9" class="card-image">
-        </div>
-      </div>
-    </section>
-  </article>-->
+  <article>
+    <ProductCardComponent :selectedId="1"/>
+  </article>
 
  <FooterComponent/>
 
@@ -135,8 +38,9 @@
 <script>
 import FooterComponent from "@/components/FooterComponent.vue";
 import NavComponent from "@/components/NavComponent.vue";
+import ProductCardComponent from "@/components/ProductCardComponent.vue";
 import producten from "@/json/producten.json";
-//import ProductCardComponent from '@/components/ProductCardComponent'
+
 export default {
   name: "OverzichtsPaginaView",
 
@@ -160,7 +64,7 @@ export default {
   },
 
   components: {
-    //ProductCardComponent,
+    ProductCardComponent,
     NavComponent,
     FooterComponent
   }
