@@ -33,7 +33,7 @@
     "afbeelding": "guitar_more_1.png",
     "price": 3500,
     "btw": "15%",
-    "stock": 0
+    "stock": 1
   },
   {
     "id": 5,
@@ -87,6 +87,6 @@
     "afbeelding": "last_guitar.png",
     "price": 994,
     "btw": "23%",
-    "stock": 4
+    "stock": 1000
   }
 ]

@@ -15,10 +15,7 @@
     </section>
 
     <article>
-      <PopularProductsComponent :selectedId="1"/>
-      <PopularProductsComponent :selectedId="2"/>
-      <PopularProductsComponent :selectedId="3"/>
-      <PopularProductsComponent :selectedId="4"/>
+      <PopularProductsComponent :productsData="data"/>
     </article> <!--:products="sortedStockedProducts"-->
 
     <FooterComponent/>

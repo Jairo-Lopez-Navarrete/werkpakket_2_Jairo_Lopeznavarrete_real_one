@@ -4,11 +4,16 @@ article{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  width: auto;
 
   .gallery{
-    width: 25%;
+    width: auto;
     @include layout();
+  }
+
+  .card-wrapper{
+    display: flex;
+    flex-direction: row;
   }
 
   .card {
@@ -45,6 +50,11 @@ article{
         @include textStyles(capitalize);
         @include paragraph();
         margin-bottom: 1rem;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
       }
 
       &-button {

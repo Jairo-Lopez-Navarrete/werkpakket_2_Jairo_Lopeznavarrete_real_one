@@ -6,7 +6,7 @@
           <div class="card-overlay"> <!--Dit kan de reden zijn waarom mijn code niet meer werkte v-for="item in data" :key="item.id"-->
             <h1 class="card-overlay-heading">{{item.titel}}</h1>
             <p class="card-overlay-paragraph">{{prijsText}}{{item.price}}</p>
-            <button class="card-overlay-button"><router-link to="'/detail' + item.id">{{buttonText}}</router-link></button> <!--v-bind toepassen op de popularproduct zelf om zo naar de detailpagina te gaan-->
+            <button class="card-overlay-button"><router-link to="'/detail' + item.id" class='link-decoration'>{{buttonText}}</router-link></button> <!--v-bind toepassen op de popularproduct zelf om zo naar de detailpagina te gaan-->
             <router-view/>
           </div>
           <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class="card-image">
@@ -24,7 +24,8 @@ export default {
 
   props: {
     //[afbeelding],
-    selectedId: Number, // Prop to receive the selected ID
+    productsData: Array,
+    selectedId: Number // Prop to receive the selected ID
   },
 
   data(){
@@ -35,7 +36,7 @@ export default {
 
   computed: {
     filteredData(){
-      return this.data.filter(item => item.id === this.selectedId); //test
+      return this.productsData.slice(0, 4).sort((a, b) => b.stock - a.stock); //test
     },
     buttonText(){
       return "Meer info";
