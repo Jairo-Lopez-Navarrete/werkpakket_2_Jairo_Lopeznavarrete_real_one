@@ -28,7 +28,7 @@
   </div>
 
   <article>
-    <ProductCardComponent/>
+    <ProductCardComponent :selectedId="1"/>
   </article>
 
  <FooterComponent/>
