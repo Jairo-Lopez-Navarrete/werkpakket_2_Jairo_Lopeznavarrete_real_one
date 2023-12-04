@@ -28,7 +28,7 @@
   </div>
 
   <article>
-    <ProductCardComponent :selectedId='1'/>
+    <ProductCardComponent :selectedId='1' :filteredData="filteredData"/>
   </article>
 
  <FooterComponent/>
@@ -47,7 +47,7 @@ export default {
   data(){
     return {
       data: producten,
-      paginatie: [1,2,3,4,5,],
+      paginatie: [1,2,3,4,5],
       filterST: false,
       filterT: false
     }
@@ -58,11 +58,11 @@ export default {
       let filtered = this.data;
 
       if (this.filterST) {
-        filtered = filtered.filter(item => item.model === 'ST-Model');
+        filtered = filtered.filter(item => item.type === 'ST-Model');
       }
 
       if (this.filterT) {
-        filtered = filtered.filter(item => item.model === 'T-Model');
+        filtered = filtered.filter(item => item.type === 'T-Model');
       }
 
       return filtered;
