@@ -1,7 +1,7 @@
 <template>
   <section class='gallery'>
     <div class='card-wrapper'>
-      <div class='card' v-for='item in filteredData' :key='item.id'>
+      <div class='card' v-for='(item, index) in data.slice(0,8)' :key='index'>
         <div class='card-overlay'>
           <!--Dit kan de reden zijn waarom mijn code niet meer werkte v-for="item in data" :key="item.id"-->
           <h1 class='card-overlay-heading'>{{ item.titel }}</h1>
