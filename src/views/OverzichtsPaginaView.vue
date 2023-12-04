@@ -62,11 +62,11 @@ export default {
         return this.data;
       }
 
-      if (this.filterST) {
+      else if (this.filterST) {
         filtered = filtered.filter(item => item.type === 'ST-Model');
       }
 
-      if (this.filterT) {
+      else {
         filtered = filtered.filter(item => item.type === 'T-Model');
       }
 
