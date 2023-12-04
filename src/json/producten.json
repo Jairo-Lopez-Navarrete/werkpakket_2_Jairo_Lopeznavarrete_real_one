@@ -88,5 +88,96 @@
     "price": 994,
     "btw": "23%",
     "stock": 1000
+  },
+  {
+    "id": 11,
+    "titel": "Fender Stratocaster Deluxe",
+    "omschrijving": "De Fender Stratocaster Deluxe is een klassieke keuze met een modern tintje, perfect voor veelzijdige gitaristen.",
+    "afbeelding": "guitar-11.png",
+    "price": 1200,
+    "btw": "21%",
+    "stock": 15
+  },
+  {
+    "id": 12,
+    "titel": "PRS Custom 24",
+    "omschrijving": "De PRS Custom 24 biedt een uitstekende balans tussen klank, comfort en stijl. Een favoriet onder professionals.",
+    "afbeelding": "guitar-12.png",
+    "price": 3500,
+    "btw": "21%",
+    "stock": 8
+  },
+  {
+    "id": 13,
+    "titel": "Gretsch White Falcon",
+    "omschrijving": "De Gretsch White Falcon is een opvallende hollowbody gitaar met een rijke klank en een elegante uitstraling.",
+    "afbeelding": "guitar-13.png",
+    "price": 5500,
+    "btw": "21%",
+    "stock": 5
+  },
+  {
+    "id": 14,
+    "titel": "Jackson Soloist SL2",
+    "omschrijving": "De Jackson Soloist SL2 is ontworpen voor snelheid en precisie, perfect voor shredders en metalgitaristen.",
+    "afbeelding": "guitar-14.png",
+    "price": 2800,
+    "btw": "21%",
+    "stock": 12
+  },
+  {
+    "id": 15,
+    "titel": "Epiphone Les Paul Standard PlusTop Pro",
+    "omschrijving": "De Epiphone Les Paul Standard PlusTop Pro biedt de klassieke Les Paul klank met een prachtige bovenkant.",
+    "afbeelding": "guitar-15.png",
+    "price": 650,
+    "btw": "21%",
+    "stock": 20
+  },
+  {
+    "id": 16,
+    "titel": "Gibson SG Standard",
+    "omschrijving": "De Gibson SG Standard levert de iconische SG klank en speelbaarheid met een verbluffend uiterlijk.",
+    "afbeelding": "guitar-16.png",
+    "price": 2000,
+    "btw": "21%",
+    "stock": 10
+  },
+  {
+    "id": 17,
+    "titel": "Ibanez RG550",
+    "omschrijving": "De Ibanez RG550 is een favoriet onder heavy metal gitaristen, bekend om zijn snelheid en agressieve klank.",
+    "afbeelding": "guitar-17.png",
+    "price": 1200,
+    "btw": "21%",
+    "stock": 18
+  },
+  {
+    "id": 18,
+    "titel": "Schecter Hellraiser C-1",
+    "omschrijving": "De Schecter Hellraiser C-1 biedt een duivels snelle speelbaarheid en krachtige EMG pick-ups voor de ultieme metalervaring.",
+    "afbeelding": "guitar-18.png",
+    "price": 1500,
+    "btw": "21%",
+    "stock": 7
+  },
+  {
+    "id": 19,
+    "titel": "Taylor T5z Classic",
+    "omschrijving": "De Taylor T5z Classic combineert akoestische en elektrische klanken in één veelzijdige gitaar.",
+    "afbeelding": "guitar-19.png",
+    "price": 2800,
+    "btw": "21%",
+    "stock": 9
+  },
+  {
+    "id": 20,
+    "titel": "Gibson Explorer",
+    "omschrijving": "De Gibson Explorer is een futuristische gitaar met een krachtige klank, ideaal voor rock en metal genres.",
+    "afbeelding": "guitar-20.png",
+    "price": 2200,
+    "btw": "21%",
+    "stock": 14
   }
+
 ]
