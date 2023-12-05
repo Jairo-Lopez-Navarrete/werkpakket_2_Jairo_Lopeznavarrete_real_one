@@ -20,11 +20,13 @@
   </section>
 
   <div class="pagination">
-    <a href="#" class="page-link active">{{paginatie[0]}}</a>
+    <router-link v-for="page in paginatie" :key="page" :to="{ name: 'Overzicht', query: { page: page } }" class="page-link" :class="{ 'active': currentPage === page }" @click="changePage(page)">{{ page }}</router-link>
+    <router-view/>
+    <!--<a href="#" class="page-link active">{{paginatie[0]}}</a>
     <a href="#" class="page-link">{{paginatie[1]}}</a>
     <a href="#" class="page-link">{{paginatie[2]}}</a>
     <a href="#" class="page-link">{{paginatie[3]}}</a>
-    <a href="#" class="page-link">{{paginatie[4]}}</a>
+    <a href="#" class="page-link">{{paginatie[4]}}</a>-->
   </div>
 
   <article>
@@ -49,7 +51,14 @@ export default {
       data: producten,
       paginatie: [1,2,3,4,5],
       filterST: false,
-      filterT: false
+      filterT: false,
+      currentPage: 1
+    }
+  },
+
+  methods: {
+    changePage(page){
+      this.currentPage = page;
     }
   },
 
