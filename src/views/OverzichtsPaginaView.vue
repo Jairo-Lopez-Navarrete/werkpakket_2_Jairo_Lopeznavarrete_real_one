@@ -20,7 +20,7 @@
   </section>
 
   <div class="pagination">
-    <router-link v-for="page in paginatie" :key="page" :to="{ name: 'Overzicht', query: { page: page } }" class="page-link" :class="{ 'active': currentPage === page }" @click="changePage(page)">{{ page }}</router-link>
+    <router-link v-for="page in paginatie" :key="page" :to="{ path: '/overzicht', query: { page: page } }" class="page-link" :class="{ 'active': currentPage === page }" @click="changePage(page)">{{ page }}</router-link>
     <router-view/>
     <!--<a href="#" class="page-link active">{{paginatie[0]}}</a>
     <a href="#" class="page-link">{{paginatie[1]}}</a>
@@ -59,27 +59,42 @@ export default {
   methods: {
     changePage(page){
       this.currentPage = page;
+      this.$router.push({ query: { page: page } });
     }
+  },
+
+  created() {
+    const queryPage = parseInt(this.$route.query.page) || 1;
+    this.currentPage = queryPage;
+
+    const itemsPerPage = 8;
+    const pageCount = Math.ceil(this.data.length / itemsPerPage);
+    this.paginatie = Array.from({ length: pageCount }, (_, index) => index + 1);
   },
 
   computed: {
     filteredData(){
+
+      const itemsPerPage = 8;
+      const startIndex = (this.currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
       let filtered = this.data;
 
       if (this.filterST && this.filterT) {
         // Toon alle producten als beide filters zijn geselecteerd
-        return this.data;
+        return filtered.slice(startIndex, endIndex);
       }
 
-      else if (this.filterST) {
+      if (this.filterST) {
         filtered = filtered.filter(item => item.type === 'ST-Model');
       }
 
-      else {
+      if (this.filterT) {
         filtered = filtered.filter(item => item.type === 'T-Model');
       }
 
-      return filtered;
+      return filtered.slice(startIndex, endIndex);
     },
     titel(){
       return "Elektrische gitaren"
