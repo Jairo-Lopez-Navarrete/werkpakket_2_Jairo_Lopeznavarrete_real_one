@@ -7,12 +7,11 @@
           <h1 class='card-overlay-heading'>{{ item.titel }}</h1>
           <p class='card-overlay-paragraph'>{{ prijsText }}{{ item.price }}</p>
           <button class='card-overlay-button'>
-            <router-link to="'/detail' + item.id">{{ buttonText }}</router-link>
+            <router-link :to="{ name: 'Detail', params: { id: item.id }}">{{ buttonText }}</router-link>
           </button>
-          <router-view />
+          <router-view/>
         </div>
-        <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class='card-image'>
-        <!--werkt niet :src="'@/assets/${item.afbeelding}'" :alt="item.id"-->
+        <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class='card-image'> <!--werkt niet :src="'@/assets/${item.afbeelding}'" :alt="item.id"-->
       </div>
     </div>
   </section>

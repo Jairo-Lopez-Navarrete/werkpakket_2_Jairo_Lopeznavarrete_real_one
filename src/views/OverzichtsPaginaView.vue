@@ -30,7 +30,7 @@
   </div>
 
   <article>
-    <ProductCardComponent :selectedId='1' :filteredData="filteredData"/>
+    <ProductCardComponent :filteredData="filteredData"/>
   </article>
 
  <FooterComponent/>
