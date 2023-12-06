@@ -70,6 +70,9 @@ export default {
     postCode(){
       return "Postcode: 2050"
     },
+    openingsUur(){
+      return "Openings uren:"
+    }
   }
 }
 </script>
