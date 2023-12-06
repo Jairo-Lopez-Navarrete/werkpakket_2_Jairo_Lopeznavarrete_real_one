@@ -1,6 +1,6 @@
 <template>
 
-<NavComponent/>
+  <NavComponent/>
 
 
   <header>
