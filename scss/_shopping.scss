@@ -1,0 +1,65 @@
+@use "_base.scss" as *;
+
+.cart-container {
+  @include layout();
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cart-title {
+  @include title;
+}
+
+.empty-cart {
+  @include layout();
+  flex-direction: column;
+}
+
+.empty-message {
+  @include paragraph(1.5rem);
+}
+
+.cart-item {
+  @include layout(flex-start, center);
+  flex-direction: row;
+  border: 1px solid $secondary-color;
+  margin: 10px;
+  padding: 10px;
+}
+
+.cart-item-image {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  @include layout(flex-start, flex-start);
+  flex-direction: column;
+}
+
+.cart-item-title {
+  @include title(1.5rem);
+}
+
+.cart-item-price {
+  @include paragraph;
+}
+
+.remove-button {
+  background-color: $tertiary-color;
+  color: $white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-total {
+  @include layout(flex-end, center);
+  margin-top: 20px;
+  flex-direction: row;
+}
+
+.total-text {
+  @include paragraph(1.25rem);
+  @include textDecoration;
+}

@@ -17,11 +17,18 @@
       <div class="text-number">
         <p><b>{{ selectedProduct.titel }}</b>{{selectedProduct.omschrijving}}</p>
         <p class="price">{{ prijsText }}{{selectedProduct.price}}</p> <!--499.99 euro-->
-        <form>
+        <form @submit.prevent="addToCart">
+          <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
+          <label for="hoeveelheid">{{ hoeveelHeid }}</label>
+          <button type="submit" class="buybutton">{{ buyProduct }}</button>
+        </form>
+        <!--<form>
           <input id="hoeveelheid" type="number">
           <label for="hoeveelheid">{{ hoeveelHeid }}</label>
         </form>
         <button class="buybutton">{{buyProduct}}</button>
+        -->
+
       </div>
     </div>
   </header>
@@ -44,12 +51,35 @@ export default {
   data(){
     return{
       data: producten,
-      productId: null
+      productId: null,
+      quantity: 1,
     }
   },
 
   created() {
     this.productId = parseInt(this.$route.params.id);
+  },
+
+
+  methods: {
+    addToCart() {
+      const selectedProduct = this.selectedProduct;
+      const itemInCart = this.cart.find(item => item.id === selectedProduct.id);
+
+      if (itemInCart) {
+        itemInCart.quantity += this.quantity;
+      } else {
+        this.cart.push({
+          id: selectedProduct.id,
+          title: selectedProduct.titel,
+          price: selectedProduct.price,
+          quantity: this.quantity,
+        });
+      }
+
+
+      this.quantity = 1;
+    },
   },
 
   computed: {
