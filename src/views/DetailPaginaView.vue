@@ -36,6 +36,11 @@ import producten from '@/json/producten.json';
 export default {
   name: "DetailPaginaView",
 
+  props: {
+    selectedId: Number,
+    filteredData: Array// Prop to receive the selected ID
+  },
+
   data(){
     return{
       data: producten,
