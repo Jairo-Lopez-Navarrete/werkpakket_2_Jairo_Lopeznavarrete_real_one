@@ -23,7 +23,6 @@ export default {
   name: "PopularProductsComponent",
 
   props: {
-    //[afbeelding],
     productsData: Array,
     selectedId: Number // Prop to receive the selected ID
   },
