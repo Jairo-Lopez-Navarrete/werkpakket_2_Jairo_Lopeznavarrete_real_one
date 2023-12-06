@@ -11,8 +11,8 @@
         <img class="image" src="@/assets/img_5.png" alt="gitaar3">
       </div>
       <div class="picture-item">
-        <h1 class="card-overlay-heading">{{producten.titel}}</h1> <!--Ibanez 3500X (small)-->
-        <img src="@/assets/guitar.png" alt="guitar1" class="card-image">
+        <h1 class="card-overlay-heading">{{product.titel}}</h1> <!--Ibanez 3500X (small)-->
+        <img :src="'@/assets/' + producten.afbeelding" :alt="product.titel" class="card-image">
       </div>
       <div class="text-number">
         <p><b>{{producten.titel}}</b>{{producten.omschrijving}}</p>
@@ -31,14 +31,20 @@
 
 <script>
 import NavComponent from "@/components/NavComponent.vue";
-import producten from '@/json/producten.json';
+//import producten from '@/json/producten.json';
+
 export default {
   name: "DetailPaginaView",
 
-  data(){
-    return{
-      data: producten
-    }
+  data() {
+    return {
+      product: null,
+    };
+  },
+
+  created() {
+    const productId = this.$route.params.id;
+    this.product = this.data.find(item => item.id === parseInt(productId));
   },
 
   computed: {

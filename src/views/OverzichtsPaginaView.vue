@@ -22,15 +22,10 @@
   <div class="pagination">
     <router-link v-for="page in paginatie" :key="page" :to="{ path: '/overzicht', query: { page: page } }" class="page-link" :class="{ 'active': currentPage === page }" @click="changePage(page)">{{ page }}</router-link>
     <router-view/>
-    <!--<a href="#" class="page-link active">{{paginatie[0]}}</a>
-    <a href="#" class="page-link">{{paginatie[1]}}</a>
-    <a href="#" class="page-link">{{paginatie[2]}}</a>
-    <a href="#" class="page-link">{{paginatie[3]}}</a>
-    <a href="#" class="page-link">{{paginatie[4]}}</a>-->
   </div>
 
   <article>
-    <ProductCardComponent :filteredData="filteredData"/>
+    <ProductCardComponent :filteredData="filteredData" @productClicked="naarDetailPagina"/>
   </article>
 
  <FooterComponent/>
@@ -60,6 +55,9 @@ export default {
     changePage(page){
       this.currentPage = page;
       this.$router.push({ query: { page: page } });
+    },
+    naarDetailPagina(productId) {
+      this.$router.push({ name: 'Detail', params: { id: productId } });
     }
   },
 

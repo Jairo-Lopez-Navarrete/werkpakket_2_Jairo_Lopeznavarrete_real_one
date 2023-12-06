@@ -17,7 +17,6 @@ const router = createRouter({
       path: '/detail',
       name: 'Detail',
       component: DetailPaginaView
-
     },
     {
       path: '/login',
