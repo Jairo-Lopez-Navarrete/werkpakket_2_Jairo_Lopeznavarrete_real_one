@@ -16,7 +16,7 @@
       </div>
       <div class="text-number">
         <p><b>{{ selectedProduct.titel }}</b>{{selectedProduct.omschrijving}}</p>
-        <p class="price">{{selectedProduct.price}}</p> <!--499.99 euro-->
+        <p class="price">{{ prijsText }}{{selectedProduct.price}}</p> <!--499.99 euro-->
         <form>
           <input id="hoeveelheid" type="number">
           <label for="hoeveelheid">{{ hoeveelHeid }}</label>
@@ -56,6 +56,10 @@ export default {
 
     selectedProduct() {
       return this.data.find(item => item.id === this.productId) || {};
+    },
+
+    prijsText() {
+      return 'Prijs: €'
     },
 
     hoeveelHeid(){
