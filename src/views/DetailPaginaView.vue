@@ -10,13 +10,13 @@
         <img class="image" src="@/assets/img_4.png" alt="gitaar2">
         <img class="image" src="@/assets/img_5.png" alt="gitaar3">
       </div>
-      <div class="picture-item">
-        <h1 class="card-overlay-heading">{{producten.titel}}</h1> <!--Ibanez 3500X (small)-->
-        <img src="@/assets/guitar.png" alt="guitar1" class="card-image">
+      <div class="picture-item" v-if="selectedProduct">
+        <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1> <!--Ibanez 3500X (small)-->
+        <img :src="'@/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class="card-image">
       </div>
       <div class="text-number">
-        <p><b>{{producten.titel}}</b>{{producten.omschrijving}}</p>
-        <p class="price">{{producten.price}}</p> <!--499.99 euro-->
+        <p><b>{{ selectedProduct.titel }}</b>{{selectedProduct.omschrijving}}</p>
+        <p class="price">{{selectedProduct.price}}</p> <!--499.99 euro-->
         <form>
           <input id="hoeveelheid" type="number">
           <label for="hoeveelheid">{{ hoeveelHeid }}</label>
@@ -32,22 +32,35 @@
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import producten from '@/json/producten.json';
+
 export default {
   name: "DetailPaginaView",
 
   data(){
     return{
-      data: producten
+      data: producten,
+      productId: null
     }
   },
 
+  created() {
+    this.productId = parseInt(this.$route.params.id);
+  },
+
   computed: {
+
+    selectedProduct() {
+      return this.data.find(item => item.id === this.productId) || {};
+    },
+
     hoeveelHeid(){
       return "Hoeveelheid"
     },
+
     buyProduct(){
       return "Koop product!"
     }
+
   },
 
   components: {
