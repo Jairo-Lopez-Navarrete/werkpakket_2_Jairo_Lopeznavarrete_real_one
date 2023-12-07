@@ -52,7 +52,6 @@ export default {
     return{
       data: producten,
       productId: null,
-      quantity: 1,
     }
   },
 

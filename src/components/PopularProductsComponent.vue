@@ -6,8 +6,11 @@
           <div class="card-overlay"> <!--Dit kan de reden zijn waarom mijn code niet meer werkte v-for="item in data" :key="item.id"-->
             <h1 class="card-overlay-heading">{{item.titel}}</h1>
             <p class="card-overlay-paragraph">{{prijsText}}{{item.price}}</p>
-            <button class="card-overlay-button"><router-link to="'/detail' + item.id" class='link-decoration'>{{buttonText}}</router-link></button> <!--v-bind toepassen op de popularproduct zelf om zo naar de detailpagina te gaan-->
-            <router-view/>
+            <router-link :to="{ name: 'Detail', params: { id: item.id }}">
+              <button class='card-overlay-button' @click="$emit('productClicked', item.id)">{{ buttonText }}</button>
+            </router-link>
+            <!--<button class="card-overlay-button"><router-link to="'/detail' + item.id" class='link-decoration'>{{buttonText}}</router-link></button>--> <!--v-bind toepassen op de popularproduct zelf om zo naar de detailpagina te gaan-->
+            <!--<router-view/>-->
           </div>
           <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class="card-image">
           <!--<img :src="'@/assets/${item.afbeelding}'" :alt="item.titel" class="card-image">--> <!-- dit is foute code maar werkt om pagina te zien src="@/assets/guitar.png" alt="gitaren"--> <!--werkt niet :src="'@/assets/${item.afbeelding}'" :alt="item.id"-->
