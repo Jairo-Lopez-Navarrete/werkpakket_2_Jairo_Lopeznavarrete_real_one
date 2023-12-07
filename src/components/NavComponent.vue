@@ -7,7 +7,7 @@
         <router-link :to="navItem.path" class="nav-list-link">{{ navItem.name }}</router-link>
       </li>-->
       <li class="list-item"></li>
-        <router-link to="/overzicht" class="list-link"><i class="user logo fa-solid fa-guitar"></i>{{productNaam}}</router-link>
+      <router-link to="/overzicht" class="list-link"><i class="user logo fa-solid fa-guitar"></i>{{productNaam}}</router-link>
       <li class="list-item">
         <router-link to="/login" class="list-link"><i class="user logo fa-solid fa-user"></i></router-link>
       </li>
