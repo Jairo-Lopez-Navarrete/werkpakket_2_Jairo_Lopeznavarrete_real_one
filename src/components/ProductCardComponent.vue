@@ -7,7 +7,7 @@
           <h1 class='card-overlay-heading'>{{ item.titel }}</h1>
           <p class='card-overlay-paragraph'>{{ prijsText }}{{ item.price }}</p>
           <router-link :to="{ name: 'Detail', params: { id: item.id }}">
-          <button class='card-overlay-button' @click="$emit('productClicked', item.id)">{{ buttonText }}</button>
+            <button class='card-overlay-button' @click="$emit('productClicked', item.id)">{{ buttonText }}</button>
           </router-link>
         </div>
         <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class='card-image'> <!--werkt niet :src="'@/assets/${item.afbeelding}'" :alt="item.id"-->
