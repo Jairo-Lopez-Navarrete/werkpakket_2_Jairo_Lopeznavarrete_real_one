@@ -74,6 +74,7 @@ export default {
       useBillingDetails: false,
       billingName: "",
       billingAddress: "",
+      checkOutCompleted: false,
     };
   },
   computed: {
