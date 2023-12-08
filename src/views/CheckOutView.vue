@@ -92,9 +92,9 @@ export default {
       return this.cart.reduce((totalVAT, item) => totalVAT + (item.price * item.quantity * parseFloat(item.btw) / 100), 0).toFixed(2);
     },
     handleCheckout() {
-      // Simulatie van een geslaagde betaling
+
       alert("Betaling geslaagd! U wordt doorgestuurd naar de bevestigingspagina.");
-      // Je kunt hier logica toevoegen om de betaling te verwerken en de gebruiker naar de bevestigingspagina te leiden.
+      this.checkoutCompleted = true;
     },
   },
 };

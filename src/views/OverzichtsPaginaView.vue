@@ -80,7 +80,6 @@ export default {
       let filtered = this.data;
 
       if (this.filterST && this.filterT) {
-        // Toon alle producten als beide filters zijn geselecteerd
         return filtered.slice(startIndex, endIndex);
       }
 

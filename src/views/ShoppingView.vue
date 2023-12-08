@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     updateQuantity(item) {
-      useCartStore().addToCart(item); // Reusing addToCart to update quantity
+      useCartStore().addToCart(item);
     },
     removeFromCart(item) {
       useCartStore().removeFromCart(item);
