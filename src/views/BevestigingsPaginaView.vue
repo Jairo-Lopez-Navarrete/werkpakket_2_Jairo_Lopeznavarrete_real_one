@@ -22,8 +22,8 @@
         </div>
 
         <div class="confirmation-total">
-          <p>Totaalprijs: €{{ calculateTotalPrice() }}</p>
-          <p>Totaal BTW: €{{ calculateTotalVAT() }}</p>
+          <p>{{ totaal }}{{ calculateTotalPrice() }}</p>
+          <p>{{ btw }}{{ calculateTotalVAT() }}</p>
         </div>
       </div>
     </main>
@@ -42,6 +42,12 @@ export default {
   computed: {
     cart() {
       return useCartStore().items;
+    },
+    btw(){
+      return "Prijs met BTW: €";
+    },
+    totaal(){
+      return "Totaalprijs: €";
     },
     cartItemCount() {
       return useCartStore().cartItemCount;
