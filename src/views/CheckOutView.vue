@@ -27,7 +27,10 @@
           <input type="text" id="billingAddress" v-model="billingAddress" />
         </div>
 
-        <button @click.prevent="handleCheckout">Bevestigen</button>
+        <button @click.prevent="handleCheckout" >Bevestigen</button>
+        <router-link v-if="checkoutCompleted" to='/bevestiging'>
+          Ga naar Bevestiging
+        </router-link>
       </form>
 
       <div class="order-summary" v-if="cart.length > 0">
@@ -47,8 +50,8 @@
         </div>
 
         <div class="order-total">
-          <p>Totaalprijs: €{{ calculateTotalPrice() }}</p>
-          <p>Totaal BTW: €{{ calculateTotalVAT() }}</p>
+          <p>Totaalprijs: € {{ calculateTotalPrice() }}</p>
+          <p>Totaal BTW: € {{ calculateTotalVAT() }}</p>
         </div>
       </div>
     </main>

@@ -6,6 +6,7 @@ import OverzichtsPaginaView from "@/views/OverzichtsPaginaView.vue";
 import HomeView from "@/views/HomeView.vue";
 import ShoppingView from '@/views/ShoppingView.vue';
 import CheckOutView from '@/views/CheckOutView.vue';
+import BevestigingsPaginaView from '@/views/BevestigingsPaginaView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/checkout',
       name: 'CheckOut',
       component: CheckOutView
+    },
+    {
+      path: '/bevestiging',
+      name: 'Bevestigingspagina',
+      component: BevestigingsPaginaView
     }
   ]
 })
