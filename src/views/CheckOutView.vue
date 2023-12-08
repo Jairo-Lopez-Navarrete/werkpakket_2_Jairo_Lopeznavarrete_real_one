@@ -27,9 +27,8 @@
           <input type="text" id="billingAddress" v-model="billingAddress" />
         </div>
 
-        <button @click.prevent="handleCheckout" >Bevestigen</button>
-        <router-link v-if="checkoutCompleted" to='/bevestiging'>
-          Ga naar Bevestiging
+        <router-link to='/bevestiging'>
+          <button>Bevestigen</button>
         </router-link>
       </form>
 
@@ -74,7 +73,7 @@ export default {
       useBillingDetails: false,
       billingName: "",
       billingAddress: "",
-      checkOutCompleted: false,
+      //checkOutCompleted: false,
     };
   },
   computed: {
@@ -92,11 +91,9 @@ export default {
     calculateTotalVAT() {
       return this.cart.reduce((totalVAT, item) => totalVAT + (item.price * item.quantity * parseFloat(item.btw) / 100), 0).toFixed(2);
     },
-    handleCheckout() {
-
-      alert("Betaling geslaagd! U wordt doorgestuurd naar de bevestigingspagina.");
+    /*handleCheckout() {
       this.checkoutCompleted = true;
-    },
+    },*/
   },
 };
 </script>

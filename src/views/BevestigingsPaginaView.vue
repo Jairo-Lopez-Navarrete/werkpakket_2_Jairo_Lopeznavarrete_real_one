@@ -1,6 +1,6 @@
 <template>
   <NavComponent :cartItemCount="cartItemCount" />
-  <div>
+  <div class='bevestiging'>
 
     <main class="confirmation-main">
       <h2>Bedankt voor uw bestelling!</h2>

@@ -1,0 +1,18 @@
+@use "_base.scss" as *;
+
+.bevestiging{
+  padding: 18rem;
+  color: $white;
+  h2{
+    font-family: $primary-font;
+    font-size: 1.5rem;
+  }
+  h3{
+    font-family: $primary-font;
+    font-size: 1.25rem;
+  }
+  p{
+    font-family: $secondary-font;
+    font-size: 1rem;
+  }
+}
