@@ -4,7 +4,8 @@ import DetailPaginaView from "@/views/DetailPaginaView.vue";
 import LoginView from "@/views/LoginView.vue";
 import OverzichtsPaginaView from "@/views/OverzichtsPaginaView.vue";
 import HomeView from "@/views/HomeView.vue";
-import ShoppingView from '@/views/ShoppingView.vue'
+import ShoppingView from '@/views/ShoppingView.vue';
+import CheckOutView from '@/views/CheckOutView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/overzicht',
       name: 'Overzicht',
       component: OverzichtsPaginaView
+    },
+    {
+      path: '/checkout',
+      name: 'CheckOut',
+      component: CheckOutView
     }
   ]
 })

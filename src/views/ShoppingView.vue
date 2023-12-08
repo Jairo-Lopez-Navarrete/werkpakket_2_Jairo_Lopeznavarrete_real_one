@@ -1,6 +1,6 @@
 <template>
+  <NavComponent :cartItemCount="cartItemCount" />
   <div class='background-color'>
-    <NavComponent :cartItemCount="cartItemCount" />
 
     <main class="shopping-main">
       <h2>{{ winkelmand }}</h2>
