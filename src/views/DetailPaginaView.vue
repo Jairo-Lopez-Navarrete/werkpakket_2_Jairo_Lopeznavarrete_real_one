@@ -33,11 +33,12 @@
     </div>
   </header>
 
-
+  <FooterComponent/>
 </template>
 
 <script>
 import NavComponent from "@/components/NavComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 import producten from '@/json/producten.json';
 import { useCartStore } from "@/stores/counter";
 
@@ -98,7 +99,8 @@ export default {
   },
 
   components: {
-    NavComponent
+    NavComponent,
+    FooterComponent
   }
 }
 </script>
