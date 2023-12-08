@@ -1,62 +1,98 @@
 <template>
-  <div class="cart-container">
-    <h2 class="cart-title" v-if="cart.length > 0">{{ mand }}</h2>
-    <div v-if="cart.length === 0" class="empty-cart">
-      <p class="empty-message">{{ legeMand }}</p>
-    </div>
-    <div v-else>
-      <div v-for="(item, index) in cart" :key="index" class="cart-item">
-        <img :src="item.image" :alt="item.title" class="cart-item-image">
+  <div class='background-color'>
+    <NavComponent :cartItemCount="cartItemCount" />
+
+    <main class="shopping-main">
+      <h2>{{ winkelmand }}</h2>
+
+      <div v-if="cart.length === 0">
+        <p class='leegte'>{{ leeg }}</p>
+      </div>
+
+      <div v-for="item in cart" :key="item.id" class="cart-item">
         <div class="cart-item-details">
-          <h3 class="cart-item-title">{{ item.title }}</h3>
-          <p class="cart-item-price">{{ formatPrice(item.price) }}</p>
-          <button @click="removeFromCart(index)" class="remove-button">{{ verwijderen }}</button>
+          <img :src="'@/assets/' + item.afbeelding" :alt="item.titel" class="cart-item-image">
+          <div class="cart-item-info">
+            <h3>{{ item.titel }}</h3>
+            <p>{{ item.omschrijving }}</p>
+          </div>
+        </div>
+        <div class="cart-item-actions">
+          <p>Aantal: {{ item.quantity }}</p>
+          <input v-model="item.quantity" type="number" min="1" @input="updateQuantity(item)">
+          <button @click="removeFromCart(item)">{{ verwijder }}</button>
+        </div>
+        <div class="cart-item-price">
+          <p>{{ subTotaal }}{{ item.price * item.quantity }}</p>
+          <p>{{btw}}{{ item.btw }}</p>
         </div>
       </div>
-      <div class="cart-total">
-        <p class="total-text">{{ totaal }} {{ formatPrice(cartTotal) }}</p>
+
+      <div v-if="cart.length > 0" class="cart-summary">
+        <p>{{ totaalPrijs }}{{ calculateTotalPrice() }}</p>
+        <p>{{ totaal }} {{ btw }} {{ calculateTotalVAT() }}</p>
       </div>
-    </div>
+
+      <router-link v-if="cart.length > 0" to="/checkout" class="checkout-button">{{ checkout }}</router-link>
+    </main>
   </div>
 </template>
 
 <script>
+import NavComponent from "@/components/NavComponent.vue";
+import { useCartStore } from "@/stores/counter";
+
 export default {
-  data() {
-    return {
-      cart: [
-        // Hier komen de items in de winkelmand
-      ]
-    };
+  name: "ShoppingView",
+  components: {
+    NavComponent,
   },
   computed: {
-    cartTotal() {
-      return this.cart.reduce((total, item) => total + item.price, 0);
+    cart() {
+      return useCartStore().items;
     },
-    mand(){
-      return "Winkelmand"
+    cartItemCount() {
+      return useCartStore().cartItemCount;
     },
-
-    legeMand(){
-      return "Uw winkelmand is leeg.. :("
+    winkelmand(){
+      return "Winkelmandje";
     },
-
-    verwijderen(){
-      return "Verwijderen"
+    leeg(){
+      return "Je winkelmandje is leeg.. :(";
+    },
+    verwijder(){
+      return "Verwijder";
+    },
+    subTotaal(){
+      return "Subtotaal: €";
+    },
+    totaalPrijs(){
+      return "Totaalprijs: €";
+    },
+    btw(){
+      return "BTW: "
     },
     totaal(){
-      return "Totaal :"
+      return "totaal"
+    },
+    checkout(){
+      return "Ga naar Checkout"
     }
   },
   methods: {
-    formatPrice(price) {
-      // Logica voor het formatteren van de prijs, bijvoorbeeld toevoegen van valutasymbool
-      return `€${price.toFixed(2)}`;
+    updateQuantity(item) {
+      useCartStore().addToCart(item); // Reusing addToCart to update quantity
     },
-    removeFromCart(index) {
-      this.cart.splice(index, 1);
-    }
-  }
+    removeFromCart(item) {
+      useCartStore().removeFromCart(item);
+    },
+    calculateTotalPrice() {
+      return this.cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    },
+    calculateTotalVAT() {
+      return this.cart.reduce((totalVAT, item) => totalVAT + (item.price * item.quantity * parseFloat(item.btw) / 100), 0).toFixed(2);
+    },
+  },
 };
 </script>
 

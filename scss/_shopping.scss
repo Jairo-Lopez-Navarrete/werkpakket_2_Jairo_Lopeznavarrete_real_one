@@ -1,65 +1,99 @@
 @use "_base.scss" as *;
-
-.cart-container {
+.background-color {
+  background-color: $primary-color;
+}
+.shopping-main {
+  padding: 12rem;
   @include layout();
   flex-direction: column;
-  padding: 20px;
-}
-
-.cart-title {
-  @include title;
-}
-
-.empty-cart {
-  @include layout();
-  flex-direction: column;
-}
-
-.empty-message {
-  @include paragraph(1.5rem);
-}
-
-.cart-item {
-  @include layout(flex-start, center);
-  flex-direction: row;
-  border: 1px solid $secondary-color;
-  margin: 10px;
-  padding: 10px;
-}
-
-.cart-item-image {
-  max-width: 100px;
-  margin-right: 10px;
-}
-
-.cart-item-details {
-  @include layout(flex-start, flex-start);
-  flex-direction: column;
-}
-
-.cart-item-title {
-  @include title(1.5rem);
-}
-
-.cart-item-price {
-  @include paragraph;
-}
-
-.remove-button {
-  background-color: $tertiary-color;
   color: $white;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-}
 
-.cart-total {
-  @include layout(flex-end, center);
-  margin-top: 20px;
-  flex-direction: row;
-}
+  h2 {
+    @include title(2.5rem);
+    margin-bottom: 1.5rem;
+    font-family: $primary-font;
+  }
 
-.total-text {
-  @include paragraph(1.25rem);
-  @include textDecoration;
+  .leegte{
+    font-size: 1.5rem;
+  }
+
+  .cart-item {
+    border: 1px solid $secondary-color;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+
+    .cart-item-details {
+      @include layout;
+
+      .cart-item-image {
+        max-width: 100px;
+        margin-right: 1rem;
+      }
+
+      .cart-item-info {
+        h3 {
+          @include title(1.5rem);
+          font-family: $primary-font;
+        }
+
+        p {
+          @include paragraph(1rem);
+          font-family: $secondary-font;
+        }
+      }
+    }
+
+    .cart-item-actions {
+      @include layout;
+
+      input {
+        width: 40px;
+        margin: 0 1rem;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      button {
+        background-color: $tertiary-color;
+        color: $white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: $secondary-font;
+      }
+    }
+
+    .cart-item-price {
+      margin-top: 1rem;
+
+      p {
+        @include paragraph(1rem);
+        font-family: $secondary-font;
+      }
+    }
+  }
+
+  .cart-summary {
+    margin-top: 1.5rem;
+
+    p {
+      @include paragraph(1rem);
+      font-family: $secondary-font;
+    }
+  }
+
+  .checkout-button {
+    margin-top: 1.5rem;
+    @include textStyles;
+    padding: 1rem;
+    background-color: $tertiary-color;
+    color: $white;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: $secondary-font;
+  }
 }
