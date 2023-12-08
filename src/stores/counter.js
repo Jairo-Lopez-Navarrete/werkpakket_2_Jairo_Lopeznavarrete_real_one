@@ -11,11 +11,9 @@ export const useCounterStore = defineStore('counter', () => {
   return { count, doubleCount, increment }
 })*/
 
-import { createPinia } from 'pinia';
+import { defineStore } from 'pinia';
 
-const pinia = createPinia();
-
-export const useCartStore = pinia.defineStore('cart', {
+export const useCartStore = defineStore('cart', {
   state: () => ({
     items: [],
   }),
@@ -28,8 +26,13 @@ export const useCartStore = pinia.defineStore('cart', {
         existingProduct.quantity += product.quantity;
       } else {
         // Voeg nieuw product toe aan de winkelmand
-        this.items.push({ ...product });
+        this.items.push({ ...product, quantity: product.quantity });
       }
     },
   },
+  getters: {
+    cartItemCount(){
+      return this.items.reduce((total, item) => total + item.quantity, 0);
+    }
+  }
 });

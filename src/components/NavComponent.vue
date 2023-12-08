@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { useCartStore } from "@/stores/counter";
+
 export default {
   name: "NavComponent",
 
@@ -31,6 +33,9 @@ export default {
     cartItemCount: Number,
   },
   computed: {
+    cartItemCount(){
+      return useCartStore().cartItemCount;
+    },
     merkNaam(){
       return "Strings Of Fire"
     },

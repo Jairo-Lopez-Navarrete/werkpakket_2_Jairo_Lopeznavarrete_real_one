@@ -18,6 +18,12 @@ $shadow-2: rgba(31, 31, 31, 0.75);
 $ipad: 820px;
 $iphone: 414px;
 
+.cart-count {
+  position:relative;
+  right: 3px;
+  bottom: 10px;
+}
+
 
 
 @mixin layout($justify: center, $align: center){

@@ -39,6 +39,7 @@
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import producten from '@/json/producten.json';
+import { useCartStore } from "@/stores/counter";
 
 export default {
   name: "DetailPaginaView",
@@ -52,6 +53,7 @@ export default {
     return{
       data: producten,
       productId: null,
+      quantity: 1
     }
   },
 
@@ -63,19 +65,13 @@ export default {
   methods: {
     addToCart() {
       const selectedProduct = this.selectedProduct;
-      const itemInCart = this.cart.find(item => item.id === selectedProduct.id);
 
-      if (itemInCart) {
-        itemInCart.quantity += this.quantity;
-      } else {
-        this.cart.push({
-          id: selectedProduct.id,
-          title: selectedProduct.titel,
-          price: selectedProduct.price,
-          quantity: this.quantity,
-        });
-      }
-
+      useCartStore().addToCart({
+        id: selectedProduct.id,
+        title: selectedProduct.titel,
+        price: selectedProduct.price,
+        quantity: this.quantity
+      });
 
       this.quantity = 1;
     },
