@@ -1,9 +1,9 @@
 <template>
   <footer>
     <div class="div1">
-      <a href="#"><i class="fa-brands fa-facebook"></i>{{merkNaam}}</a>
-      <a href="#"><i class="fa-brands fa-instagram"></i>{{merkNaam}}</a>
-      <a href="#"><i class="fa-solid fa-square-envelope"></i>{{merkNaamMail}}</a>
+      <router-link to='/'><i class="fa-brands fa-facebook"></i>{{merkNaam}}</router-link>
+      <router-link to='/'><i class="fa-brands fa-instagram"></i>{{merkNaam}}</router-link>
+      <router-link to='/'><i class="fa-solid fa-square-envelope"></i>{{merkNaamMail}}</router-link>
     </div>
     <div class="div2">
       <p>{{ contactGegevens }}</p>
