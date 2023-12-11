@@ -14,7 +14,7 @@
           <label for="password">
             <input v-model="password" id="password" type="password" placeholder="Wachtwoord">
           </label>
-          <button type="submit">{{ logIn }}</button>
+          <button class='login' type="submit">{{ logIn }}</button>
         </form>
       </div>
       <ul class="list">
