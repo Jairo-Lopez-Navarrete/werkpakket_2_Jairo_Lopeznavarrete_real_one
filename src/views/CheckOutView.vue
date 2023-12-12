@@ -1,6 +1,6 @@
 <template>
-  <NavComponent :cartItemCount="cartItemCount" />
   <div>
+    <NavComponent :cartItemCount="cartItemCount" />
 
     <main class="checkout-main">
       <h2>Checkout</h2>
@@ -27,7 +27,7 @@
           <input type="text" id="billingAddress" v-model="billingAddress" />
         </div>
 
-        <router-link to='/bevestiging'>
+        <router-link to="/bevestiging">
           <button>Bevestigen</button>
         </router-link>
       </form>
@@ -73,7 +73,6 @@ export default {
       useBillingDetails: false,
       billingName: "",
       billingAddress: "",
-      //checkOutCompleted: false,
     };
   },
   computed: {
@@ -91,9 +90,6 @@ export default {
     calculateTotalVAT() {
       return this.cart.reduce((totalVAT, item) => totalVAT + (item.price * item.quantity * parseFloat(item.btw) / 100), 0).toFixed(2);
     },
-    /*handleCheckout() {
-      this.checkoutCompleted = true;
-    },*/
   },
 };
 </script>

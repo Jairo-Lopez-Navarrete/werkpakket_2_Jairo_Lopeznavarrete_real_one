@@ -7,7 +7,7 @@
     <div class="picture-section">
       <div class="picture-item" v-if="selectedProduct">
         <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1> <!--Ibanez 3500X (small)-->
-        <img :src="'@/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class="card-image">
+        <img :src="getImagePath(selectedProduct.afbeelding)" :alt="selectedProduct.titel" class="card-image">
       </div>
       <div class="text-number">
         <p><b>{{ selectedProduct.titel }}</b>{{selectedProduct.omschrijving}}</p>
@@ -53,6 +53,9 @@ export default {
 
 
   methods: {
+    getImagePath(imageName) {
+      return import(`@/assets/${imageName}`).then((module) => module.default);
+    },
     addToCart() {
       const selectedProduct = this.selectedProduct;
 
