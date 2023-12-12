@@ -5,11 +5,6 @@
 
   <header>
     <div class="picture-section">
-      <div class="items">
-        <img class="image" src="@/assets/img_3.png" alt="gitaar1">
-        <img class="image" src="@/assets/img_4.png" alt="gitaar2">
-        <img class="image" src="@/assets/img_5.png" alt="gitaar3">
-      </div>
       <div class="picture-item" v-if="selectedProduct">
         <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1> <!--Ibanez 3500X (small)-->
         <img :src="'@/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class="card-image">
@@ -22,12 +17,6 @@
           <label for="hoeveelheid">{{ hoeveelHeid }}</label>
           <button type="submit" class="buybutton">{{ buyProduct }}</button>
         </form>
-        <!--<form>
-          <input id="hoeveelheid" type="number">
-          <label for="hoeveelheid">{{ hoeveelHeid }}</label>
-        </form>
-        <button class="buybutton">{{buyProduct}}</button>
-        -->
 
       </div>
     </div>
@@ -69,6 +58,8 @@ export default {
 
       useCartStore().addToCart({
         id: selectedProduct.id,
+        afbeelding: selectedProduct.afbeelding,
+        omschrijving: selectedProduct.omschrijving,
         title: selectedProduct.titel,
         price: selectedProduct.price,
         quantity: this.quantity

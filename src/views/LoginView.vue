@@ -26,17 +26,17 @@
 </template>
 
 <script>
+
+import gegevens from '@/json/gegevens.json';
+
 export default {
   name: "LoginView",
 
   data() {
     return {
+      data: gegevens,
       email: "",
       password: "",
-      users: [
-        { email: "user1@example.com", password: "password1", id: 1 },
-        { email: "user2@example.com", password: "password2", id: 2 }
-      ],
       loggedInUser: null
     };
   },
@@ -55,15 +55,13 @@ export default {
 
   methods: {
     login() {
-      // Simulate authentication logic
-      const user = this.users.find(u => u.email === this.email && u.password === this.password);
+      const user = this.data.user.find(u => u.email === this.email && u.password === this.password);
 
       if (user) {
         this.loggedInUser = user;
-        // Navigeer naar het winkelmandje of een andere pagina na succesvol inloggen
-        this.$router.push("/shopping-cart");
+        this.$router.push("/checkout");
 
-        // Hier kun je extra logica toevoegen, bijvoorbeeld het instellen van een gebruikerssessie.
+
       } else {
         alert("Ongeldige inloggegevens. Probeer opnieuw.");
       }
