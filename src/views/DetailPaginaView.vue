@@ -1,34 +1,41 @@
 <template>
-
-  <NavComponent/>
-
-
-  <header>
-    <div class="picture-section">
-      <div class="picture-item" v-if="selectedProduct">
-        <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1> <!--Ibanez 3500X (small)-->
-        <img :src="getImagePath(selectedProduct.afbeelding)" :alt="selectedProduct.titel" class="card-image">
+  <div>
+    <NavComponent />
+    <header>
+      <div class="picture-section">
+        <div class="picture-item" v-if="selectedProduct">
+          <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1>
+          <img
+            :src="getImagePath(selectedProduct.afbeelding)"
+            :alt="selectedProduct.titel"
+            class="card-image"
+          />
+        </div>
+        <div class="text-number">
+          <p><b>{{ selectedProduct.titel }}</b>{{ selectedProduct.omschrijving }}</p>
+          <p class="price">{{ prijsText }}{{ selectedProduct.price }}</p>
+          <form @submit.prevent="addToCart">
+            <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
+            <label for="hoeveelheid">{{ hoeveelHeid }}</label>
+            <button
+              :disabled="selectedProduct.stock === 0"
+              type="submit"
+              class="buybutton"
+            >
+              {{ buyProduct }}
+            </button>
+          </form>
+        </div>
       </div>
-      <div class="text-number">
-        <p><b>{{ selectedProduct.titel }}</b>{{selectedProduct.omschrijving}}</p>
-        <p class="price">{{ prijsText }}{{selectedProduct.price}}</p> <!--499.99 euro-->
-        <form @submit.prevent="addToCart">
-          <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
-          <label for="hoeveelheid">{{ hoeveelHeid }}</label>
-          <button type="submit" class="buybutton">{{ buyProduct }}</button>
-        </form>
-
-      </div>
-    </div>
-  </header>
-
-  <FooterComponent/>
+    </header>
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
-import producten from '@/json/producten.json';
+import producten from "@/json/producten.json";
 import { useCartStore } from "@/stores/counter";
 
 export default {
@@ -36,21 +43,20 @@ export default {
 
   props: {
     selectedId: Number,
-    filteredData: Array// Prop to receive the selected ID
+    filteredData: Array,
   },
 
-  data(){
-    return{
+  data() {
+    return {
       data: producten,
       productId: null,
-      quantity: 1
-    }
+      quantity: 1,
+    };
   },
 
   created() {
     this.productId = parseInt(this.$route.params.id);
   },
-
 
   methods: {
     getImagePath(imageName) {
@@ -65,7 +71,7 @@ export default {
         omschrijving: selectedProduct.omschrijving,
         title: selectedProduct.titel,
         price: selectedProduct.price,
-        quantity: this.quantity
+        quantity: this.quantity,
       });
 
       this.quantity = 1;
@@ -73,30 +79,28 @@ export default {
   },
 
   computed: {
-
     selectedProduct() {
-      return this.data.find(item => item.id === this.productId) || {};
+      return this.data.find((item) => item.id === this.productId) || {};
     },
 
     prijsText() {
-      return 'Prijs: €'
+      return "Prijs: €";
     },
 
-    hoeveelHeid(){
-      return "Hoeveelheid"
+    hoeveelHeid() {
+      return "Hoeveelheid";
     },
 
-    buyProduct(){
-      return "Koop product!"
-    }
-
+    buyProduct() {
+      return this.selectedProduct.stock === 0 ? "Out of Stock" : "Koop product!";
+    },
   },
 
   components: {
     NavComponent,
-    FooterComponent
-  }
-}
+    FooterComponent,
+  },
+};
 </script>
 
 <style scoped>
