@@ -1,56 +1,53 @@
 <template>
-
-    <section class="gallery">
-      <div class="card-wrapper">
-        <div class="card"  v-for="item in filteredData" :key="item.id">
-          <div class="card-overlay"> <!--Dit kan de reden zijn waarom mijn code niet meer werkte v-for="item in data" :key="item.id"-->
-            <h1 class="card-overlay-heading">{{item.titel}}</h1>
-            <p class="card-overlay-paragraph">{{prijsText}}{{item.price}}</p>
-            <router-link :to="{ name: 'Detail', params: { id: item.id }}">
-              <button class='card-overlay-button' @click="$emit('productClicked', item.id)">{{ buttonText }}</button>
-            </router-link>
-            <!--<button class="card-overlay-button"><router-link to="'/detail' + item.id" class='link-decoration'>{{buttonText}}</router-link></button>--> <!--v-bind toepassen op de popularproduct zelf om zo naar de detailpagina te gaan-->
-            <!--<router-view/>-->
-          </div>
-          <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class="card-image">
-          <!--<img :src="'@/assets/${item.afbeelding}'" :alt="item.titel" class="card-image">--> <!-- dit is foute code maar werkt om pagina te zien src="@/assets/guitar.png" alt="gitaren"--> <!--werkt niet :src="'@/assets/${item.afbeelding}'" :alt="item.id"-->
+  <section class="gallery">
+    <div class="card-wrapper">
+      <div class="card" v-for="item in filteredData" :key="item.id">
+        <div class="card-overlay">
+          <h1 class="card-overlay-heading">{{ item.titel }}</h1>
+          <p class="card-overlay-paragraph">{{ prijsText }}{{ item.price }}</p>
+          <router-link :to="{ name: 'Detail', params: { id: item.id }}">
+            <button class="card-overlay-button" @click="$emit('productClicked', item.id)">
+              {{ buttonText }}
+            </button>
+          </router-link>
         </div>
+        <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class="card-image">
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script>
-import producten from '@/json/producten.json';
+import producten from "@/json/producten.json";
 
 export default {
   name: "PopularProductsComponent",
 
   props: {
     productsData: Array,
-    selectedId: Number // Prop to receive the selected ID
+    selectedId: Number
   },
 
-  data(){
-    return{
+  data() {
+    return {
       data: producten
-    }
+    };
   },
 
   computed: {
-    filteredData(){
-      return this.productsData.slice(0, 4).sort((a, b) => b.stock - a.stock); //test
+    filteredData() {
+      return this.productsData.slice(0, 4).sort((a, b) => b.stock - a.stock);
     },
-    buttonText(){
+    buttonText() {
       return "Meer info";
     },
-    prijsText(){
+    prijsText() {
       return "Prijs: €";
     }
   }
 }
-
 </script>
 
 <style scoped>
-
+/* Add your component-specific styles here */
 </style>

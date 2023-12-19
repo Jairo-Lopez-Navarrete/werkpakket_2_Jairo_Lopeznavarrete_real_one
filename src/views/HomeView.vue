@@ -1,52 +1,47 @@
 <template>
-  <div class="body_elements">
-    <NavComponent/>
-
-    <HeaderComponent/>
-
-    <section class="reclame">
-      <div class="layout">
-        <div class="background-div">
-          <h2>{{reclame}}</h2>
-          <h2>{{reclameGitaar}}</h2>
+  <div className='body_elements'>
+    <NavComponent />
+    <HeaderComponent />
+    <section className='reclame'>
+      <div className='layout'>
+        <div className='background-div'>
+          <h2>{{ reclame }}</h2>
+          <h2>{{ reclameGitaar }}</h2>
         </div>
       </div>
-
     </section>
-
     <article>
-      <PopularProductsComponent :productsData="data"/>
-    </article> <!--:products="sortedStockedProducts"-->
-
-    <FooterComponent/>
-
+      <PopularProductsComponent :productsData='sortedStockedProducts' />
+    </article>
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-
-import HeaderComponent from '@/components/HeaderComponent.vue';
-import FooterComponent from '@/components/FooterComponent.vue';
-import NavComponent from '@/components/NavComponent.vue';
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+import NavComponent from "@/components/NavComponent.vue";
 import PopularProductsComponent from "@/components/PopularProductsComponent.vue";
-import producten from '@/json/producten.json';
+import producten from "@/json/producten.json";
 
-export default{
+export default {
   name: "HomeView",
 
-
-   data(){
-     return {
-     data: producten
+  data() {
+    return {
+      data: producten
     };
-   },
+  },
 
   computed: {
-    reclame(){
-      return "Bestseller!"
+    reclame() {
+      return "Bestseller!";
     },
-    reclameGitaar(){
-      return "Ibanez 3500X"
+    reclameGitaar() {
+      return "Ibanez 3500X";
+    },
+    sortedStockedProducts() {
+      return this.data.slice().sort((a, b) => b.stock - a.stock);
     }
   },
 
@@ -54,12 +49,11 @@ export default{
     NavComponent,
     HeaderComponent,
     PopularProductsComponent,
-    FooterComponent,
+    FooterComponent
   }
 }
 </script>
 
 <style scoped>
-
+/* Add your component-specific styles here */
 </style>
-
