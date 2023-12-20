@@ -3,10 +3,10 @@
   <div class='bevestiging'>
 
     <main class="confirmation-main">
-      <h2>Bedankt voor uw bestelling!</h2>
+      <h2>{{ titel }}</h2>
 
       <div v-if="cart.length > 0">
-        <h3>Bestellingsoverzicht</h3>
+        <h3>{{ overzicht }}</h3>
 
         <div v-for="item in cart" :key="item.id" class="confirmation-item">
           <div class="item-details">
@@ -40,6 +40,14 @@ export default {
     NavComponent,
   },
   computed: {
+
+    titel(){
+      return "Bedankt voor uw bestelling!"
+    },
+    overzicht(){
+      return "Bestellingsoverzicht"
+    },
+
     cart() {
       return useCartStore().items;
     },
