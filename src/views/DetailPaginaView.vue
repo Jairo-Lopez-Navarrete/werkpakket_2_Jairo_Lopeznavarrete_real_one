@@ -13,13 +13,7 @@
           <form @submit.prevent="addToCart">
             <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
             <label for="hoeveelheid">{{ hoeveelHeid }}</label>
-            <button
-              :disabled="selectedProduct.stock === 0"
-              type="submit"
-              class="buybutton"
-            >
-              {{ buyProduct }}
-            </button>
+            <button :disabled="selectedProduct.stock === 0" type="submit" class="buybutton">{{ buyProduct }}</button>
           </form>
         </div>
       </div>

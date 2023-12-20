@@ -2,10 +2,6 @@
   <nav class="navbar">
     <router-link to="/">{{merkNaam}}</router-link>
     <ul class="list">
-      <!--<li v-for="navItem in navItems"
-          class="nav-list-item">
-        <router-link :to="navItem.path" class="nav-list-link">{{ navItem.name }}</router-link>
-      </li>-->
       <li class="list-item"></li>
       <router-link to="/overzicht" class="list-link"><i class="user logo fa-solid fa-guitar"></i>{{productNaam}}</router-link>
       <li class="list-item">

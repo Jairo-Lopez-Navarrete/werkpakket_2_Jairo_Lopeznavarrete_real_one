@@ -34,9 +34,6 @@ export default {
   },
 
   computed: {
-    /*filteredData() {
-      return this.data.filter(item => item.id === this.selectedId) //test
-    },*/
     buttonText() {
       return 'Meer info'
     },

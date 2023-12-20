@@ -14,58 +14,58 @@
           <label for="password">
             <input v-model="password" id="password" type="password" placeholder="Wachtwoord">
           </label>
-          <button class='login' type="submit">{{ logIn }}</button>
+          <router-link to="/checkout" class="shopping-link">
+            <button class='login' @click="login">{{ logIn }}</button>
+          </router-link>
+          <button class="login" @click="logout">{{logOut}}</button>
         </form>
       </div>
-      <ul class="list">
-        <li class="login list-item"><router-link class="registreer list-item-link" to="/register">{{ registreer }}</router-link></li>
-        <li class="list-item"><a class="wachtwoord list-item-link" href="#">{{ forgotPass }}</a></li>
-      </ul>
     </div>
   </div>
 </template>
 
 <script>
-
-import gegevens from '@/json/gegevens.json';
+import { useUserStore } from "@/stores/user";
+import gegevens from "@/json/gegevens.json";
 
 export default {
   name: "LoginView",
-
   data() {
     return {
-      data: gegevens,
       email: "",
+      data: gegevens,
       password: "",
-      loggedInUser: null
     };
   },
 
   computed: {
-    logIn() {
-      return "Log in";
+    logIn(){
+      return "Login"
     },
-    registreer() {
-      return "Registreer";
-    },
-    forgotPass() {
-      return "Wachtwoord vergeten?";
+    logOut(){
+      return "Logout"
     }
   },
 
   methods: {
     login() {
-      const user = this.data.user.find(u => u.email === this.email && u.password === this.password);
+      const user = gegevens.user.find(u => u.email === this.email && u.password === this.password);
 
       if (user) {
-        this.loggedInUser = user;
-        this.$router.push("/checkout");
+        useUserStore().login({
+          email: user.email,
+          password: user.password,
+        });
 
-
+        this.$router.push({ path: '/shopping' });
       } else {
         alert("Ongeldige inloggegevens. Probeer opnieuw.");
       }
-    }
+    },
+    logout() {
+      useUserStore().logout();
+      this.$router.push("/");
+    },
   }
 };
 </script>

@@ -1,4 +1,5 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useUserStore } from "@/stores/user";
 
 import DetailPaginaView from "@/views/DetailPaginaView.vue";
 import LoginView from "@/views/LoginView.vue";
@@ -39,14 +40,26 @@ const router = createRouter({
     {
       path: '/checkout',
       name: 'CheckOut',
-      component: CheckOutView
+      component: CheckOutView,
+      meta: { requiresAuth: true },
     },
     {
       path: '/bevestiging',
       name: 'Bevestigingspagina',
-      component: BevestigingsPaginaView
-    }
+      component: BevestigingsPaginaView,
+      meta: { requiresAuth: true },
+    },
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore();
+
+  if (to.meta.requiresAuth && !userStore.isLoggedIn) {
+    next({ name: 'Login' });
+  } else {
+    next();
+  }
+});
 
 export default router
