@@ -36,15 +36,6 @@ export default {
   data() {
     return {
       weekdagen: ['Zondag: Gesloten', 'Maandag: 10:30u tot 15:30u', 'Dinsdag: 10:30u tot 15:30u', 'Woensdag: 10:30u tot 15:30u', 'Donderdag: 10:30u tot 15:30u', 'Vrijdag: 10:30u tot 15:30u', 'Zaterdag: 8:30u tot 16:30u'],
-      /*openingsUren: {
-        'Zondag': 'Gesloten',
-        'Maandag': '10:30 tot 15:30',
-        'Dinsdag': '10:30 tot 15:30',
-        'Woensdag': '10:30 tot 15:30',
-        'Donderdag': '10:30 tot 15:30',
-        'Vrijdag': '10:30 tot 15:30',
-        'Zaterdag': '8:30 tot 16:30',
-      }*/
     }
   },
 
