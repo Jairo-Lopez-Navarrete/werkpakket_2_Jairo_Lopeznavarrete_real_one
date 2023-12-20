@@ -1,12 +1,12 @@
 <template>
   <NavComponent :cartItemCount="cartItemCount" />
-  <div class='background-color'>
+  <div class="background-color">
 
     <main class="shopping-main">
       <h2>{{ winkelmand }}</h2>
 
       <div v-if="cart.length === 0">
-        <p class='leegte'>{{ leeg }}</p>
+        <p class="leegte">{{ leeg }}</p>
       </div>
 
       <div v-for="item in cart" :key="item.id" class="cart-item">
@@ -24,7 +24,7 @@
         </div>
         <div class="cart-item-price">
           <p>{{ subTotaal }}{{ item.price * item.quantity }}</p>
-          <p>{{btw}}{{ item.btw }}</p>
+          <p>{{ btw }}{{ item.btw }}</p>
         </div>
       </div>
 
@@ -41,12 +41,14 @@
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import { useCartStore } from "@/stores/counter";
+import { useUserStore } from "@/stores/user";
 
 export default {
   name: "ShoppingView",
   components: {
     NavComponent,
   },
+
   computed: {
     cart() {
       return useCartStore().items;
@@ -54,31 +56,42 @@ export default {
     cartItemCount() {
       return useCartStore().cartItemCount;
     },
-    winkelmand(){
+    winkelmand() {
       return "Winkelmandje";
     },
-    leeg(){
+    leeg() {
       return "Je winkelmandje is leeg.. :(";
     },
-    verwijder(){
+    verwijder() {
       return "Verwijder";
     },
-    subTotaal(){
+    subTotaal() {
       return "Subtotaal: €";
     },
-    totaalPrijs(){
+    totaalPrijs() {
       return "Totaalprijs: €";
     },
-    btw(){
-      return "BTW: "
+    btw() {
+      return "BTW: ";
     },
-    totaal(){
-      return "totaal"
+    totaal() {
+      return "totaal";
     },
-    checkout(){
-      return "Ga naar Checkout"
+    checkout() {
+      return "Ga naar Checkout";
+    },
+  },
+
+  beforeRouteEnter(to, from, next) {
+    const userStore = useUserStore();
+
+    if (to.meta.requiresAuth && !userStore.isLoggedIn) {
+      next({ name: 'Login' });
+    } else {
+      next();
     }
   },
+
   methods: {
     updateQuantity(item) {
       useCartStore().addToCart(item);

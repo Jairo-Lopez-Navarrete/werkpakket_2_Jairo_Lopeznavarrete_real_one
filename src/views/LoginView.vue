@@ -48,25 +48,25 @@ export default {
   },
 
   methods: {
-    login() {
-      const user = gegevens.user.find(u => u.email === this.email && u.password === this.password);
+    async login() {
+      const success = await useUserStore().login({
+        email: this.email,
+        password: this.password,
+      });
 
-      if (user) {
-        useUserStore().login({
-          email: user.email,
-          password: user.password,
-        });
-
-        this.$router.push({ path: '/shopping' });
+      if (success) {
+        // Redirect to the shopping page upon successful login
+        this.$router.push({ name: 'Shopping' });
       } else {
-        alert("Ongeldige inloggegevens. Probeer opnieuw.");
+        alert("Invalid login credentials. Please try again.");
       }
     },
+
     logout() {
       useUserStore().logout();
       this.$router.push("/");
     },
-  }
+  },
 };
 </script>
 

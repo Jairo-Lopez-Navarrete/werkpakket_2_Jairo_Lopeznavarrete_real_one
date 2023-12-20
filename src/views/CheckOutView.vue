@@ -3,13 +3,13 @@
     <NavComponent :cartItemCount="cartItemCount" />
 
     <main class="checkout-main">
-      <h2>Checkout</h2>
+      <h2>{{ checkout }}</h2>
 
       <form>
-        <label for="name">Naam</label>
+        <label for="name">{{ naam }}</label>
         <input type="text" id="name" v-model="name" />
 
-        <label for="address">Adres</label>
+        <label for="address">{{ adres }}</label>
         <input type="text" id="address" v-model="address" />
 
         <div class="billing-details-checkbox">
@@ -19,37 +19,37 @@
         </div>
 
         <div v-if="useBillingDetails">
-          <label for="billingName">Naam (facturatie)</label>
+          <label for="billingName">{{ naamFacturatie }}</label>
           <input type="text" id="billingName" v-model="billingName" />
 
-          <label for="billingAddress">Adres (facturatie)</label>
+          <label for="billingAddress">{{ adresFacturatie }}</label>
           <input type="text" id="billingAddress" v-model="billingAddress" />
         </div>
 
         <router-link to="/bevestiging">
-          <button>Bevestigen</button>
+          <button>{{ bevestigen }}</button>
         </router-link>
       </form>
 
       <div class="order-summary" v-if="cart.length > 0">
-        <h3>Besteloverzicht</h3>
+        <h3>{{ bestelOverzicht }}</h3>
 
         <div v-for="item in cart" :key="item.id" class="order-item">
           <div class="item-details">
             <p>{{ item.titel }}</p>
-            <p>Aantal: {{ item.quantity }}</p>
+            <p>{{ aantal }} {{ item.quantity }}</p>
           </div>
           <div class="item-quantity">
             <p>{{ item.quantity }}</p>
           </div>
           <div class="item-price">
-            <p>€{{ (item.price * item.quantity).toFixed(2) }}</p>
+            <p>{{ euro }}{{ (item.price * item.quantity).toFixed(2) }}</p>
           </div>
         </div>
 
         <div class="order-total">
-          <p>Totaalprijs: € {{ calculateTotalPrice() }}</p>
-          <p>Totaal BTW: € {{ calculateTotalVAT() }}</p>
+          <p>{{ totaalPrijs }} {{ euro }} {{ calculateTotalPrice() }}</p>
+          <p>{{ totaalBTW }} {{ euro }} {{ calculateTotalVAT() }}</p>
         </div>
       </div>
     </main>
@@ -66,6 +66,7 @@ export default {
   components: {
     NavComponent,
   },
+
   data() {
     return {
       name: "",
@@ -76,6 +77,46 @@ export default {
     };
   },
   computed: {
+    checkout(){
+      return "Checkout"
+    },
+    euro(){
+      return "€"
+    },
+    totaalPrijs(){
+      return "Totaal prijs: "
+    },
+    totaalBTW(){
+      return "Totaal BTW: "
+    },
+    aantal(){
+      return "Aantal: "
+    },
+    naam(){
+      return "Naam"
+    },
+    adres(){
+      return "Adres"
+    },
+
+    naamFacturatie(){
+      return "Naam facturatie"
+    },
+
+    adresFacturatie(){
+      return "Adres facturatie"
+    },
+
+    bevestigen(){
+      return "Bevestigen"
+    },
+
+    bestelOverzicht(){
+      return "BestelOverzicht"
+    },
+
+
+
     cart() {
       return useCartStore().items;
     },

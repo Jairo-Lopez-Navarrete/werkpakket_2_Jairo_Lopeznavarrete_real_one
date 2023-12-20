@@ -30,7 +30,16 @@ const router = createRouter({
     {
       path: '/shopping',
       name: 'Shopping',
-      component: ShoppingView
+      component: ShoppingView,
+      beforeEnter: (to, from, next) => {
+        const userStore = useUserStore();
+
+        if (to.meta.requiresAuth && !userStore.isLoggedIn) {
+          next({ name: 'Login' });
+        } else {
+          next();
+        }
+      },
     },
     {
       path: '/overzicht',
@@ -62,4 +71,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export default router
+export default router;

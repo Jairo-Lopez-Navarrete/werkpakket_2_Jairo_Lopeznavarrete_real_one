@@ -10,10 +10,8 @@ export const useCartStore = defineStore('cart', {
       const existingProduct = this.items.find(item => item.id === product.id);
 
       if (existingProduct) {
-        // Product bestaat al in de winkelmand, verhoog de hoeveelheid
         existingProduct.quantity += product.quantity;
       } else {
-        // Voeg nieuw product toe aan de winkelmand
         this.items.push({ ...product, quantity: product.quantity });
       }
     },
