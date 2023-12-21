@@ -1,3 +1,7 @@
+# bugs
+
+    Ik krijg geen totaal prijs te zien met BTW omdat mijn code van de btw calculatie niet helemaal correct is.
+
 # vue-project
 
 This template should help get you started developing with Vue 3 in Vite.
