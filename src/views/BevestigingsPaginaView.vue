@@ -13,9 +13,6 @@
             <p>{{ item.titel }}</p>
             <p>{{ aantal }} {{ item.quantity }}</p>
           </div>
-          <div class="item-quantity">
-            <p>{{ item.quantity }}</p>
-          </div>
           <div class="item-price">
             <p>{{euro}}{{ (item.price * item.quantity).toFixed(2) }}</p>
           </div>

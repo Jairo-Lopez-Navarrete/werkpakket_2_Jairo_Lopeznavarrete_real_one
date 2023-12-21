@@ -4,7 +4,7 @@
     "titel": "Ibanez 3500X",
     "omschrijving": "Dit gitaar is een zekere aanrader voor gevorderde gitaar spelers, Het heeft een hele dunne en soepele nek waarmee je snel en makkelijk kan shredden.",
     "afbeelding": "guitar.png",
-    "price": 500,
+    "price": 700,
     "type": "ST-Model",
     "btw": 21,
     "stock": 12
@@ -14,7 +14,7 @@
     "titel": "Pacifica Eg350",
     "omschrijving": "De Pacifica Eg350 is altijd een aanrader voor beginners, dit gitaar is gemaakt met het eikenhout, waardoor de gitaar zo licht als een veertje is. Dit gitaar heeft 26 frets wat meer is dan de gemiddelde.",
     "afbeelding": "guitar-2.png",
-    "price": 300,
+    "price": 10000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 20
@@ -24,7 +24,7 @@
     "titel": "Squier Sunburned E34X",
     "omschrijving": "De Squier Sunburned E34X is heeft een lichte overgang van oranje naar zwart met een dikkere nek van 29 frets",
     "afbeelding": "guitar-3.png",
-    "price": 150,
+    "price": 1500,
     "type": "ST-Model",
     "btw": 21,
     "stock": 11
@@ -34,7 +34,7 @@
     "titel": "Ibanez DireFire",
     "omschrijving": "De Ibanez DireFire is een gitaar voor echte durvers die graag hun grootste skills testen",
     "afbeelding": "guitar_more_1.png",
-    "price": 350,
+    "price": 3500,
     "type": "ST-Model",
     "btw": 21,
     "stock": 1
@@ -44,7 +44,7 @@
     "titel": "Ibanez XRI 1 (gold)",
     "omschrijving": "De Ibanez XRI 1 (gold) heeft niet alleen de juiste sounds maar ook de looks van een echte rockgitaar. dit gitaar is speciaal gemaakt voor als je in verschillende tunes wilt kunnen spelen zoals drop #C, drop #D, drop #A, de snaren zijn gemaakt van zilver in plaats van metaal en ze zijn dikker aangelegt als de meeste snaren waardoor je ze makkelijk anders kan afstemmen zonder dat ze kapot springen!",
     "afbeelding": "guitar-4.png",
-    "price": 4500,
+    "price": 45000,
     "type": "ST-Model",
     "btw": 10,
     "stock": 0
@@ -54,7 +54,7 @@
     "titel": "ESP T-bone EquializerR6",
     "omschrijving": "De ESP T-bone EqualizerR6 word voornamelijk gebruikt om blues en country te spelen",
     "afbeelding": "guitar-T.png",
-    "price": 2500,
+    "price": 25000,
     "type": "T-Model",
     "btw": 21,
     "stock": 15
@@ -64,7 +64,7 @@
     "titel": "Gibson Melbourne2",
     "omschrijving": "De Gibson Melbourne2 is een elite gitaar dat gekocht word door de beste gitaarspelers over heel de wereld",
     "afbeelding": "guitar-T-2.png",
-    "price": 10000,
+    "price": 100000,
     "type": "T-Model",
     "btw": 45,
     "stock": 10
@@ -74,7 +74,7 @@
     "titel": "Squier Stratocaster Metalblack",
     "omschrijving": "De Squier Stratocaster Metalblack is volledig zwart met een metallic stijl",
     "afbeelding": "guitar-T-3.png",
-    "price": 2280,
+    "price": 22800,
     "type": "T-Model",
     "btw": 25,
     "stock": 22
@@ -84,7 +84,7 @@
     "titel": "Squier Stratocaster GoldSun",
     "omschrijving": "De Squier Stratocaster GoldSun is echt een klassieker, koop deze nu",
     "afbeelding": "guitar-T-4.png",
-    "price": 2450,
+    "price": 24500,
     "type": "T-Model",
     "btw": 33,
     "stock": 18
@@ -104,7 +104,7 @@
     "titel": "Fender Stratocaster Deluxe",
     "omschrijving": "De Fender Stratocaster Deluxe is een klassieke keuze met een modern tintje, perfect voor veelzijdige gitaristen.",
     "afbeelding": "guitar-11.png",
-    "price": 1200,
+    "price": 12000,
     "type":21,
     "stock": 15
   },
@@ -113,7 +113,7 @@
     "titel": "PRS Custom 24",
     "omschrijving": "De PRS Custom 24 biedt een uitstekende balans tussen klank, comfort en stijl. Een favoriet onder professionals.",
     "afbeelding": "guitar-12.png",
-    "price": 3500,
+    "price": 35000,
     "type": "ST-Model",
     "btw": 35,
     "stock": 8
@@ -133,7 +133,7 @@
     "titel": "Jackson Soloist SL2",
     "omschrijving": "De Jackson Soloist SL2 is ontworpen voor snelheid en precisie, perfect voor shredders en metalgitaristen.",
     "afbeelding": "guitar-14.png",
-    "price": 2800,
+    "price": 28000,
     "type": "ST-Model",
     "btw": 44,
     "stock": 12
@@ -143,7 +143,7 @@
     "titel": "Epiphone Les Paul Standard PlusTop Pro",
     "omschrijving": "De Epiphone Les Paul Standard PlusTop Pro biedt de klassieke Les Paul klank met een prachtige bovenkant.",
     "afbeelding": "guitar-15.png",
-    "price": 650,
+    "price": 6500,
     "type": "T-Model",
     "btw": 46,
     "stock": 20
@@ -153,7 +153,7 @@
     "titel": "Gibson SG Standard",
     "omschrijving": "De Gibson SG Standard levert de iconische SG klank en speelbaarheid met een verbluffend uiterlijk.",
     "afbeelding": "guitar-16.png",
-    "price": 2000,
+    "price": 20000,
     "type": "T-Model",
     "btw": 21,
     "stock": 10
@@ -163,7 +163,7 @@
     "titel": "Ibanez RG550",
     "omschrijving": "De Ibanez RG550 is een favoriet onder heavy metal gitaristen, bekend om zijn snelheid en agressieve klank.",
     "afbeelding": "guitar-17.png",
-    "price": 1200,
+    "price": 12000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 18
@@ -173,7 +173,7 @@
     "titel": "Schecter Hellraiser C-1",
     "omschrijving": "De Schecter Hellraiser C-1 biedt een duivels snelle speelbaarheid en krachtige EMG pick-ups voor de ultieme metalervaring.",
     "afbeelding": "guitar-18.png",
-    "price": 1500,
+    "price": 15000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 7
@@ -183,7 +183,7 @@
     "titel": "Kiesel BlackFang XrE554",
     "omschrijving": "De Kiesel BlackFang XrE554 combineert metalische en blues klanken in één veelzijdige gitaar.",
     "afbeelding": "guitar-19.png",
-    "price": 2800,
+    "price": 28000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 9
@@ -193,7 +193,7 @@
     "titel": "Gibson Explorer",
     "omschrijving": "De Gibson Explorer is een futuristische gitaar met een krachtige klank, ideaal voor rock en metal genres.",
     "afbeelding": "guitar-20.png",
-    "price": 2200,
+    "price": 22000,
     "type": "T-Model",
     "btw": 21,
     "stock": 14
@@ -203,7 +203,7 @@
     "titel": "Gibson Firebird V",
     "omschrijving": "De Gibson Firebird V biedt een unieke offset body vorm en een heldere, sprankelende klank.",
     "afbeelding": "guitar-21.png",
-    "price": 1900,
+    "price": 19000,
     "type": "T-Model",
     "btw": 21,
     "stock": 15
@@ -213,7 +213,7 @@
     "titel": "Fender Stratocaster HSS",
     "omschrijving": "De Fender Stratocaster HSS levert de klassieke Stratocaster klank met een extra humbucker voor meer veelzijdigheid.",
     "afbeelding": "guitar-22.png",
-    "price": 1600,
+    "price": 16000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 12
@@ -223,7 +223,7 @@
     "titel": "PRS SE Santana",
     "omschrijving": "De PRS SE Santana is geïnspireerd door het iconische geluid van Carlos Santana, met warme tonen en een comfortabele speelbaarheid.",
     "afbeelding": "guitar-23.png",
-    "price": 1100,
+    "price": 11000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 18
@@ -233,7 +233,7 @@
     "titel": "Ibanez RG652AHM",
     "omschrijving": "De Ibanez RG652AHM is een high-performance gitaar met een slanke hals en krachtige DiMarzio humbuckers.",
     "afbeelding": "guitar-24.png",
-    "price": 1400,
+    "price": 14000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 10
@@ -243,7 +243,7 @@
     "titel": "Eart T380",
     "omschrijving": "De Eart T380 biedt vintage stijl en klank in een betaalbare gitaar.",
     "afbeelding": "guitar-25.png",
-    "price": 800,
+    "price": 8000,
     "type": "T-Model",
     "btw": 21,
     "stock": 20
@@ -253,7 +253,7 @@
     "titel": "Epiphone Casino Coupe",
     "omschrijving": "De Epiphone Casino Coupe is een compacte semi-hollowbody gitaar met een unieke klank en stijl.",
     "afbeelding": "guitar-26.png",
-    "price": 900,
+    "price": 9000,
     "type": "T-Model",
     "btw": 21,
     "stock": 25
@@ -263,7 +263,7 @@
     "titel": "Jackson Soloist SL3X",
     "omschrijving": "De Jackson Soloist SL3X is ontworpen voor extreme speelbaarheid en high-gain prestaties.",
     "afbeelding": "guitar-27.png",
-    "price": 1200,
+    "price": 12000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 15
@@ -273,7 +273,7 @@
     "titel": "Gibson ES-335",
     "omschrijving": "De Gibson ES-335 is een legendarische semi-hollowbody gitaar met een warme, rijke klank.",
     "afbeelding": "guitar-28.png",
-    "price": 2500,
+    "price": 25000,
     "type": "ST-Model",
     "btw": 21,
     "stock": 8
