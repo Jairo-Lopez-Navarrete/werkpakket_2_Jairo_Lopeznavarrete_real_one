@@ -59,7 +59,7 @@
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import { useCartStore } from "@/stores/counter";
-/*import { useUserStore } from "@/stores/user";*/
+import { useUserStore } from "@/stores/user";
 
 export default {
   name: "CheckoutView",
@@ -132,18 +132,18 @@ export default {
       return this.cart.reduce((totalVAT, item) => totalVAT + (item.price * item.quantity * parseFloat(item.btw) / 100), 0).toFixed(2);
     },
   },
-  /*created() {
+  created() {
     const currentUser = useUserStore().currentUser;
 
     if (currentUser) {
       this.name = currentUser.firstname + " " + currentUser.name;
       this.address = currentUser.address;
-
-
-      this.billingName = currentUser.firstname + " " + currentUser.name;
+      this.useBillingDetails = false;
       this.billingAddress = currentUser.address;
+
+
     }
-  },*/
+  },
 };
 </script>
 
