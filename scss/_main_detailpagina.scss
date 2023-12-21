@@ -24,6 +24,19 @@ header {
     }
   }
 
+  label{
+    font-size: 1.5rem;
+  }
+
+  input{
+    text-align: center;
+    border-radius: 1rem;
+    border-width: 0.15rem;
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 2rem;
+  }
+
   .text-number {
     @include layout(flex-start, flex-start);
     flex-direction: column;
@@ -42,11 +55,6 @@ header {
 
       margin: 0 0 0 0.5rem;
       font-family: $secondary-font;
-    }
-
-    input {
-      height: 1.5rem;
-      width: 2.5rem;
     }
   }
 
