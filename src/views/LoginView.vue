@@ -17,7 +17,6 @@
           <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
           <button class="login" type="submit">{{ logIn }}</button>
         </form>
-        <button v-else class="logout" @click="logout">{{ logOut }}</button>
         <router-link v-else class="logout" @click="logout" to="/">{{ logOut }}</router-link>
       </div>
     </div>
@@ -75,17 +74,14 @@ export default {
         });
 
         if (loginSuccess) {
-          console.log("Login successful. Redirecting to Shopping page.");
           this.errorMessage = "";
           this.$router.push({ path: "/shopping" });
         } else {
-          console.log("Login failed. Invalid credentials.");
-          this.errorMessage = "Invalid login credentials. Please try again.";
+          this.errorMessage = "Ongeldige inlog gegevens, probeer opnieuw.";
         }
       }
       else {
-        console.log("User not found. Invalid credentials.");
-        this.errorMessage = "Invalid login credentials. Please try again.";
+        this.errorMessage = "Ongeldige inlog gegevens, probeer opnieuw.";
       }
     },
     logout() {
