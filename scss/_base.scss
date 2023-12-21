@@ -24,6 +24,10 @@ $iphone: 414px;
   bottom: 10px;
 }
 
+h1{
+  font-family: $primary-font;
+}
+
 
 
 @mixin layout($justify: center, $align: center){
