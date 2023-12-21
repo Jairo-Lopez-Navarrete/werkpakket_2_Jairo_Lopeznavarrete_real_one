@@ -18,6 +18,7 @@
           <button class="login" type="submit">{{ logIn }}</button>
         </form>
         <button v-else class="logout" @click="logout">{{ logOut }}</button>
+        <router-link v-else class="logout" @click="logout" to="/">{{ logOut }}</router-link>
       </div>
     </div>
   </div>
@@ -40,6 +41,12 @@ export default {
   computed: {
     logIn() {
       return "Login";
+    },
+    logOut() {
+      return "Logout";
+    },
+    isLoggedIn() {
+      return useUserStore().isLoggedIn;
     },
   },
 
@@ -75,10 +82,15 @@ export default {
           console.log("Login failed. Invalid credentials.");
           this.errorMessage = "Invalid login credentials. Please try again.";
         }
-      } else {
+      }
+      else {
         console.log("User not found. Invalid credentials.");
         this.errorMessage = "Invalid login credentials. Please try again.";
       }
+    },
+    logout() {
+      useUserStore().logout();
+      this.$router.push({ name: "Login" });
     }
   },
 };

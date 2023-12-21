@@ -139,7 +139,6 @@ export default {
       this.name = currentUser.firstname + " " + currentUser.name;
       this.address = currentUser.address;
       this.useBillingDetails = false;
-      this.billingAddress = currentUser.address;
 
 
     }
