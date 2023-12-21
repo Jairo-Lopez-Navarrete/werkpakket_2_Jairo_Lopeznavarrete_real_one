@@ -41,7 +41,7 @@
 <script>
 import NavComponent from "@/components/NavComponent.vue";
 import { useCartStore } from "@/stores/counter";
-import { useUserStore } from "@/stores/user";
+/*import { useUserStore } from "@/stores/user";*/
 
 export default {
   name: "ShoppingView",
@@ -82,7 +82,7 @@ export default {
     },
   },
 
-  beforeRouteEnter(to, from, next) {
+  /*beforeRouteEnter(to, from, next) {
     const userStore = useUserStore();
 
     if (to.meta.requiresAuth && !userStore.isLoggedIn) {
@@ -90,7 +90,7 @@ export default {
     } else {
       next();
     }
-  },
+  },*/
 
   methods: {
     updateQuantity(item) {

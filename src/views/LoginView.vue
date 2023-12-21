@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { useUserStore } from "@/stores/user";
+/*import { useUserStore } from "@/stores/user";*/
 import gegevens from "@/json/gegevens.json";
 
 export default {
@@ -55,7 +55,6 @@ export default {
       });
 
       if (success) {
-        // Redirect to the shopping page upon successful login
         this.$router.push({ name: 'Shopping' });
       } else {
         alert("Invalid login credentials. Please try again.");
