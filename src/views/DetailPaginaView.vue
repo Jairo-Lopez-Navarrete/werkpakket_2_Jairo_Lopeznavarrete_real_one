@@ -12,7 +12,7 @@
           <p class="price">{{ prijsText }}{{ selectedProduct.price }}</p>
           <p class='voorraad'>{{ voorraad }}</p>
           <form @submit.prevent="addToCart">
-            <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
+            <input v-model="quantity" id="hoeveelheid" type="number" min="1" :max="selectedProduct.stock" required>
             <label for="hoeveelheid">{{ hoeveelHeid }}</label>
             <button :disabled="selectedProduct.stock === 0" type="submit" class="buybutton">{{ buyProduct }}</button>
           </form>
@@ -50,9 +50,13 @@ export default {
   },
 
   methods: {
-
     addToCart() {
       const selectedProduct = this.selectedProduct;
+
+      if (this.quantity > selectedProduct.stock) {
+        console.error('De opgegeven hoeveelheid is groter dan de beschikbare voorraad.');
+        return;
+      }
 
       useCartStore().addToCart({
         id: selectedProduct.id,
