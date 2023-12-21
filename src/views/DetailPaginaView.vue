@@ -10,6 +10,7 @@
         <div class="text-number">
           <p><b>{{ selectedProduct.titel }}</b>{{ selectedProduct.omschrijving }}</p>
           <p class="price">{{ prijsText }}{{ selectedProduct.price }}</p>
+          <p class='voorraad'>{{ voorraad }}</p>
           <form @submit.prevent="addToCart">
             <input v-model="quantity" id="hoeveelheid" type="number" min="1" required>
             <label for="hoeveelheid">{{ hoeveelHeid }}</label>
@@ -69,6 +70,10 @@ export default {
   computed: {
     selectedProduct() {
       return this.data.find((item) => item.id === this.productId) || {};
+    },
+
+    voorraad() {
+      return "Voorraad: " + this.selectedProduct.stock;
     },
 
     prijsText() {
