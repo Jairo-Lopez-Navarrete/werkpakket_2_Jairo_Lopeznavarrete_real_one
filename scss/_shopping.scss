@@ -19,13 +19,14 @@
   }
 
   .cart-item {
+    width: 75%;
     border: 1px solid $secondary-color;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     padding: 1rem;
 
     .cart-item-details {
-      @include layout;
+      @include layout(space-between);
 
       .cart-item-image {
         max-width: 100px;
