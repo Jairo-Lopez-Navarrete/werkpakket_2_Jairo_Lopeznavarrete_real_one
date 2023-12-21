@@ -28,7 +28,7 @@
     <ProductCardComponent :filteredData="filteredData" @productClicked="naarDetailPagina"/>
   </article>
 
- <FooterComponent/>
+  <FooterComponent/>
 
 </template>
 
