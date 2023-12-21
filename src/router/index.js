@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-/*import { useUserStore } from "@/stores/user";*/
+import { useUserStore } from "@/stores/user";
 
 import DetailPaginaView from "@/views/DetailPaginaView.vue";
 import LoginView from "@/views/LoginView.vue";
@@ -31,15 +31,9 @@ const router = createRouter({
       path: '/shopping',
       name: 'Shopping',
       component: ShoppingView,
-      /*beforeEnter: (to, from, next) => {
-        const userStore = useUserStore();
-
-        if (to.meta.requiresAuth && !userStore.isLoggedIn) {
-          next({ name: 'Login' });
-        } else {
-          next();
-        }
-      },*/
+      meta: {
+        requiresAuth: true,
+      },
     },
     {
       path: '/overzicht',
@@ -61,7 +55,7 @@ const router = createRouter({
   ]
 })
 
-/*router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
   const userStore = useUserStore();
 
   if (to.meta.requiresAuth && !userStore.isLoggedIn) {
@@ -69,6 +63,6 @@ const router = createRouter({
   } else {
     next();
   }
-});*/
+});
 
 export default router;

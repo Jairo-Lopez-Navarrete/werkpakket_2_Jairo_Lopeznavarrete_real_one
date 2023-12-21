@@ -2,30 +2,29 @@
   <div class="body_elements_login">
     <div class="arrow-div">
       <router-link class="arrow" to="/"><i class="fa-solid fa-arrow-left"></i></router-link>
-      <router-view/>
+      <router-view />
     </div>
     <div class="background-info">
       <h1>{{ logIn }}</h1>
       <div class="form-layout">
-        <form @submit.prevent="login">
+        <form @submit.prevent="login" v-if="!isLoggedIn">
           <label for="e-mail">
-            <input v-model="email" id="e-mail" type="email" placeholder="E-mail">
+            <input v-model="email" id="e-mail" type="email" placeholder="E-mail" required>
           </label>
           <label for="password">
-            <input v-model="password" id="password" type="password" placeholder="Wachtwoord">
+            <input v-model="password" id="password" type="password" placeholder="Wachtwoord" required>
           </label>
-          <router-link to="/checkout" class="shopping-link">
-            <button class='login' @click="login">{{ logIn }}</button>
-          </router-link>
-          <button class="login" @click="logout">{{logOut}}</button>
+          <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
+          <button class="login" type="submit">{{ logIn }}</button>
         </form>
+        <button v-else class="logout" @click="logout">{{ logOut }}</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-/*import { useUserStore } from "@/stores/user";*/
+import { useUserStore } from "@/stores/user";
 import gegevens from "@/json/gegevens.json";
 
 export default {
@@ -33,42 +32,61 @@ export default {
   data() {
     return {
       email: "",
-      data: gegevens,
       password: "",
+      errorMessage: "",
     };
   },
 
   computed: {
-    logIn(){
-      return "Login"
+    logIn() {
+      return "Login";
     },
-    logOut(){
-      return "Logout"
-    }
   },
 
   methods: {
     async login() {
-      const success = await useUserStore().login({
-        email: this.email,
-        password: this.password,
-      });
+      const userStore = useUserStore();
 
-      if (success) {
-        this.$router.push({ name: 'Shopping' });
-      } else {
-        alert("Invalid login credentials. Please try again.");
+      console.log("Attempting login...");
+
+      if (userStore.isLoggedIn) {
+        console.log("User is already logged in. Redirecting to Shopping page.");
+        this.$router.push({ name: "Shopping" });
+        return;
       }
-    },
 
-    logout() {
-      useUserStore().logout();
-      this.$router.push("/");
-    },
+      const user = gegevens.user.find(
+        (u) => u.email === this.email && u.password === this.password
+      );
+
+      if (user) {
+        console.log("User found. Logging in...");
+
+        const loginSuccess = userStore.login({
+          email: this.email,
+          password: this.password,
+        });
+
+        if (loginSuccess) {
+          console.log("Login successful. Redirecting to Shopping page.");
+          this.errorMessage = "";
+          this.$router.push({ path: "/shopping" });
+        } else {
+          console.log("Login failed. Invalid credentials.");
+          this.errorMessage = "Invalid login credentials. Please try again.";
+        }
+      } else {
+        console.log("User not found. Invalid credentials.");
+        this.errorMessage = "Invalid login credentials. Please try again.";
+      }
+    }
   },
 };
 </script>
 
 <style scoped>
-
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
 </style>
