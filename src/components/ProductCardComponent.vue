@@ -24,7 +24,7 @@ export default {
 
   props: {
     selectedId: Number,
-    filteredData: Array// Prop to receive the selected ID
+    filteredData: Array
   },
 
   data() {

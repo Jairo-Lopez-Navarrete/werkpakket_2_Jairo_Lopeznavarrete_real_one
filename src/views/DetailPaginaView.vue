@@ -49,9 +49,7 @@ export default {
   },
 
   methods: {
-    getImagePath(imageName) {
-      return import(`@/assets/${imageName}`).then((module) => module.default);
-    },
+
     addToCart() {
       const selectedProduct = this.selectedProduct;
 
