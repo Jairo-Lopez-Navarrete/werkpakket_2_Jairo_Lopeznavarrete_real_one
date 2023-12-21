@@ -5,7 +5,7 @@
       <div class="picture-section">
         <div class="picture-item" v-if="selectedProduct">
           <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1>
-          <img :src="'src/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class='card-image'/>
+          <img :src="'../src/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class='card-image'/>
         </div>
         <div class="text-number">
           <p><b>{{ selectedProduct.titel }}</b>{{ selectedProduct.omschrijving }}</p>

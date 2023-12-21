@@ -11,7 +11,7 @@
 
       <div v-for="item in cart" :key="item.id" class="cart-item">
         <div class="cart-item-details">
-          <img :src="'@/assets/' + item.afbeelding" :alt="item.titel" class="cart-item-image">
+          <img :src="'../src/assets/' + item.afbeelding" :alt="item.titel" class="cart-item-image">
           <div class="cart-item-info">
             <h3>{{ item.titel }}</h3>
             <p>{{ item.omschrijving }}</p>

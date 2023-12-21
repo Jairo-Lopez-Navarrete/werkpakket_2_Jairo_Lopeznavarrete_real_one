@@ -11,13 +11,13 @@
         <div v-for="item in cart" :key="item.id" class="confirmation-item">
           <div class="item-details">
             <p>{{ item.titel }}</p>
-            <p>Aantal: {{ item.quantity }}</p>
+            <p>{{ aantal }} {{ item.quantity }}</p>
           </div>
           <div class="item-quantity">
             <p>{{ item.quantity }}</p>
           </div>
           <div class="item-price">
-            <p>€{{ (item.price * item.quantity).toFixed(2) }}</p>
+            <p>{{euro}}{{ (item.price * item.quantity).toFixed(2) }}</p>
           </div>
         </div>
 
@@ -41,6 +41,12 @@ export default {
   },
   computed: {
 
+    aantal(){
+      return "Aantal: "
+    },
+    euro(){
+      return "€ "
+    },
     titel(){
       return "Bedankt voor uw bestelling!"
     },
