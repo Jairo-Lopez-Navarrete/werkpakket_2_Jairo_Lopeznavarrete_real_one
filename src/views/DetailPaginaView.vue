@@ -2,19 +2,19 @@
   <div>
     <NavComponent />
     <header>
-      <div class="picture-section">
-        <div class="picture-item" v-if="selectedProduct">
-          <h1 class="card-overlay-heading">{{ selectedProduct.titel }}</h1>
-          <img :src="'../src/assets/' + selectedProduct.afbeelding" :alt="selectedProduct.titel" class='card-image'/>
+      <div class='picture-section'>
+        <div class='picture-item' v-if='selectedProduct'>
+          <h1 class='card-overlay-heading'>{{ selectedProduct.titel }}</h1>
+          <img :src="'../src/assets/' + selectedProduct.afbeelding" :alt='selectedProduct.titel' class='card-image' />
         </div>
-        <div class="text-number">
+        <div class='text-number'>
           <p><b>{{ selectedProduct.titel }}</b>{{ selectedProduct.omschrijving }}</p>
-          <p class="price">{{ prijsText }}{{ selectedProduct.price }}</p>
+          <p class='price'>{{ prijsText }}{{ selectedProduct.price }}</p>
           <p class='voorraad'>{{ voorraad }}</p>
-          <form @submit.prevent="addToCart">
-            <input v-model="quantity" id="hoeveelheid" type="number" min="1" :max="selectedProduct.stock" required>
-            <label for="hoeveelheid">{{ hoeveelHeid }}</label>
-            <button :disabled="selectedProduct.stock === 0" type="submit" class="buybutton">{{ buyProduct }}</button>
+          <form @submit.prevent='addToCart'>
+            <input v-model='quantity' id='hoeveelheid' type='number' min='1' :max='selectedProduct.stock' required>
+            <label for='hoeveelheid'>{{ hoeveelHeid }}</label>
+            <button :disabled='selectedProduct.stock === 0' type='submit' class='buybutton'>{{ buyProduct }}</button>
           </form>
         </div>
       </div>
@@ -24,38 +24,38 @@
 </template>
 
 <script>
-import NavComponent from "@/components/NavComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+import NavComponent from '@/components/NavComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 import producten from '@/json/producten.json'
-import { useCartStore } from "@/stores/counter";
+import { useCartStore } from '@/stores/counter'
 
 export default {
-  name: "DetailPaginaView",
+  name: 'DetailPaginaView',
 
   props: {
     selectedId: Number,
-    filteredData: Array,
+    filteredData: Array
   },
 
   data() {
     return {
       data: producten,
       productId: null,
-      quantity: 1,
-    };
+      quantity: 1
+    }
   },
 
   created() {
-    this.productId = parseInt(this.$route.params.id);
+    this.productId = parseInt(this.$route.params.id)
   },
 
   methods: {
     addToCart() {
-      const selectedProduct = this.selectedProduct;
+      const selectedProduct = this.selectedProduct
 
       if (this.quantity > selectedProduct.stock) {
-        console.error('De opgegeven hoeveelheid is groter dan de beschikbare voorraad.');
-        return;
+        console.error('De opgegeven hoeveelheid is groter dan de beschikbare voorraad.')
+        return
       }
 
       useCartStore().addToCart({
@@ -64,40 +64,40 @@ export default {
         omschrijving: selectedProduct.omschrijving,
         title: selectedProduct.titel,
         price: selectedProduct.price,
-        quantity: this.quantity,
-      });
+        quantity: this.quantity
+      })
 
-      this.quantity = 1;
-    },
+      this.quantity = 1
+    }
   },
 
   computed: {
     selectedProduct() {
-      return this.data.find((item) => item.id === this.productId) || {};
+      return this.data.find((item) => item.id === this.productId) || {}
     },
 
     voorraad() {
-      return "Voorraad: " + this.selectedProduct.stock;
+      return 'Voorraad: ' + this.selectedProduct.stock
     },
 
     prijsText() {
-      return "Prijs: €";
+      return 'Prijs: €'
     },
 
     hoeveelHeid() {
-      return "Hoeveelheid";
+      return 'Hoeveelheid'
     },
 
     buyProduct() {
-      return this.selectedProduct.stock === 0 ? "Out of Stock" : "Koop product!";
-    },
+      return this.selectedProduct.stock === 0 ? 'Out of Stock' : 'Koop product!'
+    }
   },
 
   components: {
     NavComponent,
-    FooterComponent,
-  },
-};
+    FooterComponent
+  }
+}
 </script>
 
 <style scoped>

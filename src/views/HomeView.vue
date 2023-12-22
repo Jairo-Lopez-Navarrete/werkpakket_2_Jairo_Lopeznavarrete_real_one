@@ -18,30 +18,30 @@
 </template>
 
 <script>
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import NavComponent from "@/components/NavComponent.vue";
-import PopularProductsComponent from "@/components/PopularProductsComponent.vue";
-import producten from "@/json/producten.json";
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import NavComponent from '@/components/NavComponent.vue'
+import PopularProductsComponent from '@/components/PopularProductsComponent.vue'
+import producten from '@/json/producten.json'
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
 
   data() {
     return {
       data: producten
-    };
+    }
   },
 
   computed: {
     reclame() {
-      return "Bestseller!";
+      return 'Bestseller!'
     },
     reclameGitaar() {
-      return "Ibanez 3500X";
+      return 'Ibanez 3500X'
     },
     sortedStockedProducts() {
-      return this.data.slice().sort((a, b) => b.stock - a.stock);
+      return this.data.slice().sort((a, b) => b.stock - a.stock)
     }
   },
 

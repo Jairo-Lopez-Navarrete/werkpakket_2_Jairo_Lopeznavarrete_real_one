@@ -9,7 +9,7 @@
             <button class='card-overlay-button' @click="$emit('productClicked', item.id)">{{ buttonText }}</button>
           </router-link>
         </div>
-        <img :src="'src/assets/' + item.afbeelding" :alt="item.titel" class='card-image'>
+        <img :src="'src/assets/' + item.afbeelding" :alt='item.titel' class='card-image'>
       </div>
     </div>
   </section>
