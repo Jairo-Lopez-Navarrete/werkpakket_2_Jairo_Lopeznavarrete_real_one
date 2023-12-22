@@ -6,7 +6,6 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     currentUser: null,
     isLoggedIn: false,
-    token: null,
   }),
   actions: {
     login({ email, password }) {
@@ -14,7 +13,6 @@ export const useUserStore = defineStore('user', {
       if (user) {
         this.currentUser = user;
         this.isLoggedIn = true;
-        this.token = 'yourGeneratedToken';
         return true;
       } else {
         return false;
@@ -23,7 +21,6 @@ export const useUserStore = defineStore('user', {
     logout() {
       this.currentUser = null;
       this.isLoggedIn = false;
-      this.token = null;
     },
   },
 });
